@@ -92,7 +92,7 @@
 
 对于某成分数据 $x = [x_1, x_2, ..., x_D] \in S^D$，定义：
 
-$$\text{clr}(x) = \left[\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}\right] = \xi \tag{3.1}$$
+$$\text{clr}(x) = \left[\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}\right] = \xi (3.1)$$
 
 其中 $g_m(x)$ 是几何平均，即：
 
@@ -100,7 +100,7 @@ $$g_m(x) = \sqrt[D]{\prod_{k=1}^{D} x_k} = \exp\left(\frac{1}{D}\sum_{k=1}^{D}\l
 
 对 $\text{clr}(x)$ 的分量进行简单代数运算后可发现：
 
-$$\xi_1 = \ln\frac{x_1}{g_m(x)} = \ln x_1 - \ln g_m(x) = \ln x_1 - \frac{1}{D}\sum_{k=1}^{D}\ln x_k \tag{3.2}$$
+$$\xi_1 = \ln\frac{x_1}{g_m(x)} = \ln x_1 - \ln g_m(x) = \ln x_1 - \frac{1}{D}\sum_{k=1}^{D}\ln x_k (3.2)$$
 
 #### 3.3.1 CLR 变换的直观理解
 
@@ -269,6 +269,7 @@ $$y(x) = w^T \psi(x) + b, \quad \psi(x) \quad (1)$$
 是核函数。Y 为样本类别，
 
 $$y(x_i) > 0 \iff y_i = +1$$
+
 $$y(x_i) < 0 \iff y_i = -1 \quad (2)$$
 
 由此可以推出，
@@ -316,6 +317,7 @@ $$\xi_{PbO} = -3.51\xi_{BaO} + 5.97 \quad (10)$$
 由此，高钾玻璃和铅钡玻璃的分类规律³可以概括为：
 
 $$\xi_{PbO} + 3.51\xi_{BaO} - 5.97 > 0，\text{样本属于铅钡玻璃}$$
+
 $$\xi_{PbO} + 3.51\xi_{BaO} - 5.97 < 0，\text{样本属于高钾玻璃} \quad (11)$$
 
 **【插图占位： alt text（5 号图，图片未内嵌，见同目录原 PDF）】**
@@ -434,9 +436,11 @@ $$D^2_{rk} = \frac{n_p n_q}{n_r} (\bar{X}_r - \bar{X}_k)^T (\bar{X}_r - \bar{X}_
 得到亚类划分标准如下：
 
 $$\xi_{MgO} + 2.10\xi_{CaO} - 1.51 > 0，样本属于高钙低镁玻璃$$
+
 $$\xi_{MgO} + 2.10\xi_{CaO} - 1.51 < 0，样本属于低钙高镁玻璃 \quad (17)$$
 
 $$\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 > 0，样本属于高钠玻璃$$
+
 $$\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 < 0，样本属于低钠玻璃 \quad (18)$$
 
 **【插图占位： alt text（4 号图，图片未内嵌，见同目录原 PDF）】**

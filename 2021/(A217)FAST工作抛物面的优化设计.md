@@ -93,27 +93,27 @@
 
 本文基于题目附件 8 给出的空间直角坐标，以 $O$ 为坐标原点，构建剖面图上的二维直角坐标系。则水平向右方向为 $x$ 轴正向，竖直向上为 $z$ 轴正向。图 1 为 FAST 的剖面示意图，其中抛物线的焦点为点 $P$。由于讨论的是开口方向竖直向上的抛物线，故其焦点 $P$ 的坐标为：
 
-$$P(0, p) \tag{5-1}$$
+$$P(0, p) (5-1)$$
 
 根据抛物线的几何性质，设该抛物线的焦距为 $f$。则焦点与顶点的距离为 $f$，则该抛物线顶点 $V$ 坐标为：
 
-$$V(0, p - f) \tag{5-2}$$
+$$V(0, p - f) (5-2)$$
 
 由于抛物线焦点与准线的距离为一倍焦距，故可得抛物线准线方程为：
 
-$$z = p + f \tag{5-3}$$
+$$z = p + f (5-3)$$
 
 根据抛物线的几何性质，可知抛物线上的任意一点到准线的距离等于该点到焦点的距离。利用该性质构建抛物线方程：
 
-$$\sqrt{(x - 0)^2 + (z - p)^2} = |z - (p + f)| \tag{5-4}$$
+$$\sqrt{(x - 0)^2 + (z - p)^2} = |z - (p + f)| (5-4)$$
 
 其中，$z$ 为点 $M(x, z)$ 的 $z$ 轴坐标，由准线方程 (5-3) 得出；$x$ 为点 $M$ 的 $x$ 轴坐标。接着，将 $x$ 和 $z$ 的值代入式 (5-4)，可得：
 
-$$\sqrt{x^2 + (z - p)^2} = |z - p - f| \tag{5-5}$$
+$$\sqrt{x^2 + (z - p)^2} = |z - p - f| (5-5)$$
 
 两边平方项展开后，移项整理可得方程：
 
-$$x^2 = 4f(z - p + f) \tag{5-6}$$
+$$x^2 = 4f(z - p + f) (5-6)$$
 
 以上，得到了二维直角坐标系下，开口竖直向上的抛物线方程。
 
@@ -127,39 +127,39 @@ $$x^2 = 4f(z - p + f) \tag{5-6}$$
 
 如图 2，以 $O$ 点为原点，以原 $z$ 轴为极轴，构建极坐标系，有：
 
-$$x = \rho \sin\theta, \quad z = \rho \cos\theta \tag{5-7}$$
+$$x = \rho \sin\theta, \quad z = \rho \cos\theta (5-7)$$
 
 其中，$\rho$ 是从原点出发，到抛物线的距离。将式 (5-7) 代入直角坐标下的抛物线方程并整理可得：
 
-$$\rho^2 \sin^2\theta = 4f(\rho \cos\theta - p + f) \tag{5-8}$$
+$$\rho^2 \sin^2\theta = 4f(\rho \cos\theta - p + f) (5-8)$$
 
 为了得到不同偏转角度 $\theta$ 与 $\rho$ 的表达式，需要对式 (5-8) 的方程进行求解。
 
 (1) 当 $\theta \neq 0$ 时，可将式 (5-8) 看作以 $\rho$ 为未知量的一元二次方程，故有：
 
-$$\rho^2 \sin^2\theta - 4f\cos\theta \cdot \rho + 4f(p - f) = 0 \tag{5-9}$$
+$$\rho^2 \sin^2\theta - 4f\cos\theta \cdot \rho + 4f(p - f) = 0 (5-9)$$
 
 此时方程始终有两个不同的根。根据韦达定理：
 
-$$\rho_1 + \rho_2 = \frac{4f\cos\theta}{\sin^2\theta} \tag{5-10}$$
+$$\rho_1 + \rho_2 = \frac{4f\cos\theta}{\sin^2\theta} (5-10)$$
 
-$$\rho_1 \cdot \rho_2 = \frac{4f(p - f)}{\sin^2\theta} \tag{5-11}$$
+$$\rho_1 \cdot \rho_2 = \frac{4f(p - f)}{\sin^2\theta} (5-11)$$
 
 故可知，此时对于每一个 $\theta$，都会产生取值一正一负的两个根。舍去负根，得到正根的解析式：
 
-$$\rho(\theta) = \frac{2f\cos\theta + 2\sqrt{f^2\cos^2\theta - f(p-f)\sin^2\theta}}{\sin^2\theta} \tag{5-12}$$
+$$\rho(\theta) = \frac{2f\cos\theta + 2\sqrt{f^2\cos^2\theta - f(p-f)\sin^2\theta}}{\sin^2\theta} (5-12)$$
 
 (2) 当 $\theta = 0$ 时，可将式 (5-8) 看作以 $\rho$ 为未知量的一元一次方程，故有：
 
-$$0 = 4f(\rho - p + f) \tag{5-13}$$
+$$0 = 4f(\rho - p + f) (5-13)$$
 
 经过化简，可得基于偏转角度 $\theta$ 与 $\rho$ 的表达式：
 
-$$\rho(0) = p - f \tag{5-14}$$
+$$\rho(0) = p - f (5-14)$$
 
 由于公式 (5-14) 中含有未知参数，则将该函数记为：
 
-$$\rho = \rho(\theta; f) \tag{5-15}$$
+$$\rho = \rho(\theta; f) (5-15)$$
 
 以上，得到了在不同的偏转角度下，二维抛物线上的点到原点的距离 $\rho$ 的表达式，接着将此二维抛物线进行旋转即可得到三维的旋转抛物面。
 
@@ -167,11 +167,11 @@ $$\rho = \rho(\theta; f) \tag{5-15}$$
 
 将 5.1.2 节得到的二维抛物线以极轴为中轴线旋转，得到反射面板的旋转抛物面，该抛物面可使得沿着中轴线平行射入的电磁波可以被反射到焦点 $P$ 处。为比较这一理想抛物面与基准球面的相似程度，需要在球坐标系下，以口径为 300 米的抛物面在基准球面上的投影所围成的区域为积分域，对理想抛物面到原点的距离与基准球面半径的差值平方进行积分，即：
 
-$$E(f) = \iint_{\Omega} [\rho(\theta; f) - R]^2 \, dS \tag{5-16}$$
+$$E(f) = \iint_{\Omega} [\rho(\theta; f) - R]^2 \, dS (5-16)$$
 
 积分数值的大小是评价相似程度的准则。其中，$R$ 为基准球面半径；$\theta$ 为抛物面上的点与原点的连线和中垂线所形成的空间角的大小；$dS$ 为曲面微元；$\Omega$ 为积分域，可表示如下：
 
-$$\Omega = \{(\theta, \varphi) \mid 0 \leq \theta \leq \theta_{\max}, 0 \leq \varphi \leq 2\pi\} \tag{5-17}$$
+$$\Omega = \{(\theta, \varphi) \mid 0 \leq \theta \leq \theta_{\max}, 0 \leq \varphi \leq 2\pi\} (5-17)$$
 
 **【插图占位： 极坐标系下FAST剖面及积分区域示意图（3 号图，图片未内嵌，见同目录原 PDF）】**
 
@@ -179,15 +179,15 @@ $$\Omega = \{(\theta, \varphi) \mid 0 \leq \theta \leq \theta_{\max}, 0 \leq \va
 
 由于抛物面的中轴线是竖直的，所以在球坐标系下可转化为二重积分，故该积分式可化简为：
 
-$$E(f) = \int_0^{2\pi} \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta \, d\varphi \tag{5-18}$$
+$$E(f) = \int_0^{2\pi} \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta \, d\varphi (5-18)$$
 
 其中，$\varphi$ 为方位角；$\theta$ 为仰角；$\theta_{\max}$ 是在 $\varphi$ 角给定时，$\theta$ 角在基准球面上的轨迹投影出的圆形的半径。根据题目要求的工作口径，可知 $\theta$ 的取值范围满足：
 
-$$\sin\theta_{\max} = \frac{150}{300} = 0.5 \tag{5-19}$$
+$$\sin\theta_{\max} = \frac{150}{300} = 0.5 (5-19)$$
 
 根据几何关系，易知式 (5-19) 有两个解 $\theta_1$ 和 $\theta_2$，有 $\theta_1 < \theta_2$，且这两个解的均值为 $\frac{\pi}{2}$。为防止对 $\varphi$ 指向的圆环重复积分，可设 $\theta$ 的取值范围为 $[0, \theta_{\max}]$。结合上述分析，对式 (5-18) 进一步化简得：
 
-$$E(f) = 2\pi \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta \tag{5-20}$$
+$$E(f) = 2\pi \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta (5-20)$$
 
 以上，得到了球坐标系下，计算理想抛物面和基准球面之间相似程度的准则。
 
@@ -195,11 +195,11 @@ $$E(f) = 2\pi \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\t
 
 由于在现有约束条件下，可求解出多个不同焦距的理想抛物面，故需要对于理想抛物面进行最优化的选取。故构建目标函数如下：
 
-$$\min_{f} E(f) = 2\pi \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta \tag{5-21}$$
+$$\min_{f} E(f) = 2\pi \int_0^{\theta_{\max}} [\rho(\theta; f) - R]^2 \cdot \rho^2 \sin\theta \, d\theta (5-21)$$
 
 结合式 (5-6)，确定形成最优理想抛物面的抛物线方程为：
 
-$$x^2 = 4f(z - p + f) \tag{5-22}$$
+$$x^2 = 4f(z - p + f) (5-22)$$
 
 ### 5.2 问题一模型的求解
 
