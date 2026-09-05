@@ -114,7 +114,7 @@ $$
 
 
 $$
-\sin\delta = \sin\frac{2\pi D}{365}\sin\left(\frac{2\pi}{360} \times 23.45\right)
+\sin\delta = \sin\frac{2\pi D}{365}\sin(\frac{2\pi}{360} \times 23.45)
 $$
 
 
@@ -132,7 +132,7 @@ $$
 
 
 $$
-DNI = G_0\left[a + b\exp\left(-\frac{c}{\sin\alpha_s}\right)\right]
+DNI = G_0[a + b\exp(-\frac{c}{\sin\alpha_s})]
 $$
 
 

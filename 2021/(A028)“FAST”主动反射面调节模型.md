@@ -494,7 +494,7 @@ $$
 
 
 $$
-RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| \overrightarrow{CX_i'} - \overrightarrow{CX_i} \right|^{2}} \quad (14)
+RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} | \overrightarrow{CX_i'} - \overrightarrow{CX_i} |^{2}} \quad (14)
 $$
 
 
@@ -522,7 +522,7 @@ $$
 
 
 $$
-D = \frac{1}{2k} \left( \sum_{j=1}^{k} \left( \left| \overrightarrow{CX_j'} \right| - \left| \overrightarrow{CX_j} \right| \right) + k \left( \left| \overrightarrow{CP'} \right| - \left| \overrightarrow{CP} \right| \right) \right) \quad (15)
+D = \frac{1}{2k} ( \sum_{j=1}^{k} ( | \overrightarrow{CX_j'} | - | \overrightarrow{CX_j} | ) + k ( | \overrightarrow{CP'} | - | \overrightarrow{CP} | ) ) \quad (15)
 $$
 
 
@@ -646,7 +646,7 @@ $$
 
 
 $$
-LSUM_1 = \sum_{i=1}^{n_1} \left| \overrightarrow{X_{0i}X_{1i}} \right| \quad (18)
+LSUM_1 = \sum_{i=1}^{n_1} | \overrightarrow{X_{0i}X_{1i}} | \quad (18)
 $$
 
 
@@ -658,7 +658,7 @@ $$
 
 
 $$
-LSUM_2 = \sum_{i=1}^{n_2} \left| \overrightarrow{X_{0i}X_{2i}} \right| \quad (19)
+LSUM_2 = \sum_{i=1}^{n_2} | \overrightarrow{X_{0i}X_{2i}} | \quad (19)
 $$
 
 
@@ -784,7 +784,7 @@ $$
 
 
 $$
-\overrightarrow{CN_{PQ}} = R \cdot \frac{\overrightarrow{CM_{PQ}}}{\left| CM_{PQ} \right|}
+\overrightarrow{CN_{PQ}} = R \cdot \frac{\overrightarrow{CM_{PQ}}}{| CM_{PQ} |}
 $$
 
 
@@ -802,7 +802,7 @@ $$
 
 
 $$
-𝑅𝑀𝑆 = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left| \overrightarrow{CX_{i}^{理想}} - \overrightarrow{CX_{i}^{实际}} \right|^{2}}
+𝑅𝑀𝑆 = \sqrt{\frac{1}{n}\sum_{i=1}^{n}| \overrightarrow{CX_{i}^{理想}} - \overrightarrow{CX_{i}^{实际}} |^{2}}
 $$
 
 
@@ -830,7 +830,7 @@ $$
 
 
 $$
-d = D = \frac{1}{2k}\left[ \sum_{j=1}^{k}\left( \left| \overrightarrow{CX_{j}^{理想}} \right| - \left| \overrightarrow{CX_{j}^{实际}} \right| \right) + k\left( \left| \overrightarrow{CP_{理想}} \right| - \left| \overrightarrow{CP_{实际}} \right| \right) \right] \quad (21)
+d = D = \frac{1}{2k}[ \sum_{j=1}^{k}( | \overrightarrow{CX_{j}^{理想}} | - | \overrightarrow{CX_{j}^{实际}} | ) + k( | \overrightarrow{CP_{理想}} | - | \overrightarrow{CP_{实际}} | ) ] \quad (21)
 $$
 
 
@@ -936,7 +936,7 @@ $$
 
 
 $$
-J_{AB} = \left( \overrightarrow{AB} \times \overrightarrow{AP} \right) \cdot \left( \overrightarrow{AB} \times \overrightarrow{AC} \right)
+J_{AB} = ( \overrightarrow{AB} \times \overrightarrow{AP} ) \cdot ( \overrightarrow{AB} \times \overrightarrow{AC} )
 $$
 
 
@@ -950,7 +950,7 @@ $$
 
 
 $$
-J_{BC} = \left( \overrightarrow{BC} \times \overrightarrow{BP} \right) \cdot \left( \overrightarrow{BC} \times \overrightarrow{BA} \right), \quad J_{CA} = \left( \overrightarrow{CA} \times \overrightarrow{CP} \right) \cdot \left( \overrightarrow{CA} \times \overrightarrow{CB} \right)
+J_{BC} = ( \overrightarrow{BC} \times \overrightarrow{BP} ) \cdot ( \overrightarrow{BC} \times \overrightarrow{BA} ), \quad J_{CA} = ( \overrightarrow{CA} \times \overrightarrow{CP} ) \cdot ( \overrightarrow{CA} \times \overrightarrow{CB} )
 $$
 
 
@@ -971,7 +971,7 @@ $$
 
 （3）计数在𝑣中的点的个数𝑛， $\hat{s} = \frac{nS}{N}$。
 
-（4）由于误差 $\left| s - \hat{s} \right|$是概率误差，故可以通过多次实验取平均值的方法，用 $\hat{s}$的平均值 $\bar{\hat{s}}$作为𝑠的统计值。
+（4）由于误差 $| s - \hat{s} |$是概率误差，故可以通过多次实验取平均值的方法，用 $\hat{s}$的平均值 $\bar{\hat{s}}$作为𝑠的统计值。
 
 ### 5.3.2 模型建立：
 
@@ -1182,7 +1182,7 @@ $$
 
 
 $$
-F\left(0, -\frac{R}{2\cos\theta}\right)
+F(0, -\frac{R}{2\cos\theta})
 $$
 
 
@@ -1236,7 +1236,7 @@ $$
 
 
 $$
-x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
+x_E = ( \frac{R}{2\cos\theta} - (1 - 0.466)R ) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
 $$
 
 
@@ -1292,7 +1292,7 @@ $$
 
 
 $$
-\cos\theta = \left< \overrightarrow{CP} \cdot \overrightarrow{C'U} \right> = \frac{\left| \overrightarrow{CP} \cdot \overrightarrow{C'U} \right|}{|CP||C'U|}
+\cos\theta = < \overrightarrow{CP} \cdot \overrightarrow{C'U} > = \frac{| \overrightarrow{CP} \cdot \overrightarrow{C'U} |}{|CP||C'U|}
 $$
 
 
@@ -1360,7 +1360,7 @@ $$
 
 
 $$
-S_{投影} = \frac{1}{2} \left| \overrightarrow{W_1 W_2} \times \overrightarrow{W_1 W_3} \right|
+S_{投影} = \frac{1}{2} | \overrightarrow{W_1 W_2} \times \overrightarrow{W_1 W_3} |
 $$
 
 
@@ -1418,7 +1418,7 @@ $$
 
 
 $$
-S_{vi} = \frac{1}{2} \left| \overrightarrow{V_{i1} V_{i2}} \times \overrightarrow{V_{i1} V_{i3}} \right|
+S_{vi} = \frac{1}{2} | \overrightarrow{V_{i1} V_{i2}} \times \overrightarrow{V_{i1} V_{i3}} |
 $$
 
 
@@ -1472,7 +1472,7 @@ $$
 
 
 $$
-x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
+x_E = ( \frac{R}{2\cos\theta} - (1 - 0.466)R ) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
 $$
 
 

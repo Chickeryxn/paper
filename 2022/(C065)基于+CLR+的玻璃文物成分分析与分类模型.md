@@ -97,7 +97,7 @@
 
 
 $$
-\text{clr}(x) = \left[\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}\right] = \xi (3.1)
+\text{clr}(x) = [\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}] = \xi (3.1)
 $$
 
 
@@ -111,7 +111,7 @@ $$
 
 
 $$
-g_m(x) = \sqrt[D]{\prod_{k=1}^{D} x_k} = \exp\left(\frac{1}{D}\sum_{k=1}^{D}\ln x_k\right)
+g_m(x) = \sqrt[D]{\prod_{k=1}^{D} x_k} = \exp(\frac{1}{D}\sum_{k=1}^{D}\ln x_k)
 $$
 
 
