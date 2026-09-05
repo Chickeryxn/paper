@@ -1619,7 +1619,7 @@ end
 
 ## 10.1.2 常数定义与数据处理
 
-41 Constant.m：程序用到的所有常量数值定义
+onstant.m：程序用到的所有常量数值定义
 ```matlab
 % 本文件原名 Constant.m
 classdef Constant
