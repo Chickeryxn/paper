@@ -92,15 +92,33 @@
 
 对于某成分数据 $x = [x_1, x_2, ..., x_D] \in S^D$，定义：
 
-$$\text{clr}(x) = \left[\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}\right] = \xi (3.1)$$
+
+
+$$
+\text{clr}(x) = \left[\ln\frac{x_1}{g_m(x)}, \ln\frac{x_2}{g_m(x)}, \ldots, \ln\frac{x_D}{g_m(x)}\right] = \xi (3.1)
+$$
+
+
 
 其中 $g_m(x)$ 是几何平均，即：
 
-$$g_m(x) = \sqrt[D]{\prod_{k=1}^{D} x_k} = \exp\left(\frac{1}{D}\sum_{k=1}^{D}\ln x_k\right)$$
+
+
+$$
+g_m(x) = \sqrt[D]{\prod_{k=1}^{D} x_k} = \exp\left(\frac{1}{D}\sum_{k=1}^{D}\ln x_k\right)
+$$
+
+
 
 对 $\text{clr}(x)$ 的分量进行简单代数运算后可发现：
 
-$$\xi_1 = \ln\frac{x_1}{g_m(x)} = \ln x_1 - \ln g_m(x) = \ln x_1 - \frac{1}{D}\sum_{k=1}^{D}\ln x_k (3.2)$$
+
+
+$$
+\xi_1 = \ln\frac{x_1}{g_m(x)} = \ln x_1 - \ln g_m(x) = \ln x_1 - \frac{1}{D}\sum_{k=1}^{D}\ln x_k (3.2)
+$$
+
+
 
 #### 3.3.1 CLR 变换的直观理解
 
@@ -124,7 +142,13 @@ CLR 的提出基于这样一种理论视角：将成分数据的样本空间（�
 
 性质（a）体现出艾氏空间与欧氏空间同构，而性质（b）、（c）体现出 CLR 为等距变换。而将 CLR 变换后的数据转换为艾氏空间当中的成分数据（以百分比为例），只需要进行如下操作即可：
 
-$$x_j = \frac{\exp(\xi_j)}{\sum_{k=1}^{D}\exp(\xi_k)} \quad \text{for } j = 1, \ldots, D$$
+
+
+$$
+x_j = \frac{\exp(\xi_j)}{\sum_{k=1}^{D}\exp(\xi_k)} \quad \text{for } j = 1, \ldots, D
+$$
+
+
 
 综上所述，我们对原始数据做 CLR 处理，并将处理后的数据看作欧氏空间当中的向量进行分析建模。针对 CLR 处理后的单个成分分量，将其解释为该成分的相对含量或相对重要性，单个分量蕴含了该成分相对其他成分的重要性。最后，在必要时刻，我们将分析、计算后的 CLR 数据重新转变为加和为一的成分数据，即通俗形式。
 
@@ -136,24 +160,54 @@ $$x_j = \frac{\exp(\xi_j)}{\sum_{k=1}^{D}\exp(\xi_k)} \quad \text{for } j = 1, \
 
 卡方检验：对于 r×c 的列联表，若其总样本数大于 40 且每个类别的理论频数大于等于 5 可用卡方检验。
 
-$$H_0: p_{ij} = p_{i\cdot} \cdot p_{\cdot j}, \quad i = 1, ..., r, \quad j = 1, ..., c.$$
+
+
+$$
+H_0: p_{ij} = p_{i\cdot} \cdot p_{\cdot j}, \quad i = 1, ..., r, \quad j = 1, ..., c.
+$$
+
+
 
 检验统计量为
 
-$$\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(n_{ij} - n\hat{p}_{ij})^2}{n\hat{p}_{ij}},$$
+
+
+$$
+\chi^2 = \sum_{i=1}^{r} \sum_{j=1}^{c} \frac{(n_{ij} - n\hat{p}_{ij})^2}{n\hat{p}_{ij}},
+$$
+
+
 
 在原假设 $H_0$ 成立时上式近似服从自由度为 $(r-1)(c-1)$ 的 $\chi^2$ 分布。其中各 $\hat{p}_{ij}$ 是在 $H_0$ 成立下得到的 $\hat{p}_{ij}$ 的最大似然估计，其表达式为
 
-$$\hat{p}_{ij} = \hat{p}_{i\cdot} \cdot \hat{p}_{\cdot j} = \frac{n_{i\cdot}}{n} \cdot \frac{n_{\cdot j}}{n},$$
+
+
+$$
+\hat{p}_{ij} = \hat{p}_{i\cdot} \cdot \hat{p}_{\cdot j} = \frac{n_{i\cdot}}{n} \cdot \frac{n_{\cdot j}}{n},
+$$
+
+
 
 对给定的显著性水平 $\alpha$，检验的拒绝域为
 
-$$W = \{\chi^2 \geqslant \chi^2_{1-\alpha}((r-1)(c-1))\}$$
+
+
+$$
+W = \{\chi^2 \geqslant \chi^2_{1-\alpha}((r-1)(c-1))\}
+$$
+
+
 
 对于不符合卡方检验要求的小样本数据，利用 Fisher 精确检验，以 2×2 表格为例：
 此时独立性对应超几何分布：
 
-$$P(t) = P(n_{11} = t) = \frac{\binom{n_{1+}}{t}\binom{n_{2+}}{n_{+1} - t}}{\binom{n}{n_{+1}}}$$
+
+
+$$
+P(t) = P(n_{11} = t) = \frac{\binom{n_{1+}}{t}\binom{n_{2+}}{n_{+1} - t}}{\binom{n}{n_{+1}}}
+$$
+
+
 
 该公式表示 $n_{ij}$ 的分布只取决于 $n_{11}$。给定边际总计， $n_{11}$ 决定了其他三个单元格计数。特别地，对于 2×2 表格，独立性等价于发生比之比 $\theta = 1$。检验 $H_0: \theta = 1$，P 值就可以表示为多个超几何分布概率的求和。比如，考察 $H_a: \theta > 1$。对于给定的边际总计， $n_{11}$ 的值较大时对应的样本发生比之比也较大，检验结果也就更有可能支持 $H_a$。
 
@@ -201,7 +255,13 @@ $$P(t) = P(n_{11} = t) = \frac{\binom{n_{1+}}{t}\binom{n_{2+}}{n_{+1} - t}}{\bin
 
 基于以上原因，我们将分别求出高钾、铅钡玻璃风化前后各成分相对含量均值差 $\Delta\xi_{mean}$（通过表 2 求出），并通过风化后成分加上均值差的方法预测该部位风化前的成分的相对含量：
 
-$$\xi_{erode} + \Delta\xi_{mean} = \xi_{predict}$$
+
+
+$$
+\xi_{erode} + \Delta\xi_{mean} = \xi_{predict}
+$$
+
+
 
 其中 $\xi_{erode}$ 为风化后的相对成分数据， $\xi_{predict}$ 是预测后的数据。这样做的合理性和好处有五：
 
@@ -264,25 +324,61 @@ $$\xi_{erode} + \Delta\xi_{mean} = \xi_{predict}$$
 
 我们假设数据集 $(X_1, Y_1), (X_2, Y_2), ..., (X_n, Y_n)$，其中
 
-$$y(x) = w^T \psi(x) + b, \quad \psi(x) \quad (1)$$
+
+
+$$
+y(x) = w^T \psi(x) + b, \quad \psi(x) \quad (1)
+$$
+
+
 
 是核函数。Y 为样本类别，
 
-$$y(x_i) > 0 \iff y_i = +1$$
 
-$$y(x_i) < 0 \iff y_i = -1 \quad (2)$$
+
+$$
+y(x_i) > 0 \iff y_i = +1
+$$
+
+
+
+
+
+$$
+y(x_i) < 0 \iff y_i = -1 \quad (2)
+$$
+
+
 
 由此可以推出，
 
-$$y_i \cdot y(x_i) > 0 \quad (3)$$
+
+
+$$
+y_i \cdot y(x_i) > 0 \quad (3)
+$$
+
+
 
 此时，各点距离分界线的距离可以表示为
 
-$$dist = \frac{y_i(w^T \cdot \psi(x_i) + b)}{|w|} \quad (4)$$
+
+
+$$
+dist = \frac{y_i(w^T \cdot \psi(x_i) + b)}{|w|} \quad (4)
+$$
+
+
 
 基于结构风险最小原理和间隔最大化策略，该模型优化函数为：
 
-$$\min_{w,b} \frac{1}{2} \|w\|^2 \quad \text{且} \quad y_i(w^T \cdot \psi(x_i) + b) \geq 1 \quad (5)$$
+
+
+$$
+\min_{w,b} \frac{1}{2} \|w\|^2 \quad \text{且} \quad y_i(w^T \cdot \psi(x_i) + b) \geq 1 \quad (5)
+$$
+
+
 
 此后，支持向量机引入拉格朗日乘数法求解目标函数，得到最佳决策边界。
 
@@ -292,19 +388,43 @@ $$\min_{w,b} \frac{1}{2} \|w\|^2 \quad \text{且} \quad y_i(w^T \cdot \psi(x_i) 
 
 线性核函数：
 
-$$K(x_i, x_j) = x_i^T x_j \quad (6)$$
+
+
+$$
+K(x_i, x_j) = x_i^T x_j \quad (6)
+$$
+
+
 
 多项式核函数：
 
-$$K(x_i, x_j) = (\gamma x_i^T x_j + b)^d \quad (7)$$
+
+
+$$
+K(x_i, x_j) = (\gamma x_i^T x_j + b)^d \quad (7)
+$$
+
+
 
 高斯核函数，又称 radial 核函数：
 
-$$K(x_i, x_j) = \exp(-\gamma \|x_i - x_j\|^2) \quad (8)$$
+
+
+$$
+K(x_i, x_j) = \exp(-\gamma \|x_i - x_j\|^2) \quad (8)
+$$
+
+
 
 Sigmoid 核：
 
-$$K(x_i, x_j) = \tanh(\gamma x_i^T x_j + b) \quad (9)$$
+
+
+$$
+K(x_i, x_j) = \tanh(\gamma x_i^T x_j + b) \quad (9)
+$$
+
+
 
 #### 5.2.4 SVM 分类结果呈现
 
@@ -312,13 +432,31 @@ $$K(x_i, x_j) = \tanh(\gamma x_i^T x_j + b) \quad (9)$$
 
 此时，分界线的函数表达式为：
 
-$$\xi_{PbO} = -3.51\xi_{BaO} + 5.97 \quad (10)$$
+
+
+$$
+\xi_{PbO} = -3.51\xi_{BaO} + 5.97 \quad (10)
+$$
+
+
 
 由此，高钾玻璃和铅钡玻璃的分类规律³可以概括为：
 
-$$\xi_{PbO} + 3.51\xi_{BaO} - 5.97 > 0，\text{样本属于铅钡玻璃}$$
 
-$$\xi_{PbO} + 3.51\xi_{BaO} - 5.97 < 0，\text{样本属于高钾玻璃} \quad (11)$$
+
+$$
+\xi_{PbO} + 3.51\xi_{BaO} - 5.97 > 0，\text{样本属于铅钡玻璃}
+$$
+
+
+
+
+
+$$
+\xi_{PbO} + 3.51\xi_{BaO} - 5.97 < 0，\text{样本属于高钾玻璃} \quad (11)
+$$
+
+
 
 **【插图占位： alt text（5 号图，图片未内嵌，见同目录原 PDF）】**
 
@@ -354,11 +492,23 @@ $$\xi_{PbO} + 3.51\xi_{BaO} - 5.97 < 0，\text{样本属于高钾玻璃} \quad (
 
 假设已对 n 个样本进行分类，并且分类个数为 k ，G₁, G₂, · · · , Gₖ 表示为 k 个类，Gₜ 类中的样本个数用 nₜ 表示，Gₜ 类的重心用 X̄ₜ 表示，Gₜ 类的第 i 个样品用 Xᵢₜ 表示(t = 1, 2, · · · , k)，则 Gₜ 类中的样品离差平方和表示为：
 
-$$W_t = \sum_{i=1}^{n_t} (X_i^t - \bar{X}_t)^T (X_i^t - \bar{X}_t) \quad (12)$$
+
+
+$$
+W_t = \sum_{i=1}^{n_t} (X_i^t - \bar{X}_t)^T (X_i^t - \bar{X}_t) \quad (12)
+$$
+
+
 
 其中 Xᵢₜ、X̄ₜ 为 m 维向量，k 类的总离差平方和为：
 
-$$W = \sum_{t=1}^{k} W_t = \sum_{t=1}^{k} \sum_{i=1}^{n_t} (X_i^t - \bar{X}_t)^T (X_i^t - \bar{X}_t) \quad (13)$$
+
+
+$$
+W = \sum_{t=1}^{k} W_t = \sum_{t=1}^{k} \sum_{i=1}^{n_t} (X_i^t - \bar{X}_t)^T (X_i^t - \bar{X}_t) \quad (13)
+$$
+
+
 
 1. 将 n 个样本各自分为一类，此时 W=0；
 2. 对其中某两个类进行合并，此时应满足使 W 的增加量最小；
@@ -366,15 +516,33 @@ $$W = \sum_{t=1}^{k} W_t = \sum_{t=1}^{k} \sum_{i=1}^{n_t} (X_i^t - \bar{X}_t)^T
 
 将某两类合并之后增加的 △W 作为其之间的平方距离，即 D²ₚᵩ = Wᵣ − (Wₚ + Wᵩ) 表示 Gₚ 和 Gᵩ 之间的平方距离，则：
 
-$$W_r = \sum_{i=1}^{n_r} (X_i^r - \bar{X}_r)^T (X_i^r - \bar{X}_r) = \sum_{i=1}^{n_p} (X_i^p - \bar{X}_p)^T (X_i^p - \bar{X}_p) + \sum_{i=1}^{n_q} (X_i^q - \bar{X}_q)^T (X_i^q - \bar{X}_q) \quad (14)$$
+
+
+$$
+W_r = \sum_{i=1}^{n_r} (X_i^r - \bar{X}_r)^T (X_i^r - \bar{X}_r) = \sum_{i=1}^{n_p} (X_i^p - \bar{X}_p)^T (X_i^p - \bar{X}_p) + \sum_{i=1}^{n_q} (X_i^q - \bar{X}_q)^T (X_i^q - \bar{X}_q) \quad (14)
+$$
+
+
 
 其中， $\bar{X}_r = \frac{1}{n_r}(n_p \bar{X}_p + n_q \bar{X}_q)$
 
-$$D_{pq} = W_r - (W_p + W_q) = \frac{n_p n_q}{n_r} (\bar{X}_p - \bar{X}_q)^T (\bar{X}_p - \bar{X}_q) = \frac{n_p n_q}{n_r} d^2_{pq} \quad (15)$$
+
+
+$$
+D_{pq} = W_r - (W_p + W_q) = \frac{n_p n_q}{n_r} (\bar{X}_p - \bar{X}_q)^T (\bar{X}_p - \bar{X}_q) = \frac{n_p n_q}{n_r} d^2_{pq} \quad (15)
+$$
+
+
 
 当 Gₚ 和 Gᵩ 合并为 Gᵣ 后，Gᵣ 与其它类 Gₖ 的距离为：
 
-$$D^2_{rk} = \frac{n_p n_q}{n_r} (\bar{X}_r - \bar{X}_k)^T (\bar{X}_r - \bar{X}_k) = \frac{n_p + n_k}{n_r + n_k} D^2_{pk} + \frac{n_q + n_k}{n_r + n_k} D^2_{qk} - \frac{n_k}{n_r + n_k} D^2_{pq} \quad (16)$$
+
+
+$$
+D^2_{rk} = \frac{n_p n_q}{n_r} (\bar{X}_r - \bar{X}_k)^T (\bar{X}_r - \bar{X}_k) = \frac{n_p + n_k}{n_r + n_k} D^2_{pk} + \frac{n_q + n_k}{n_r + n_k} D^2_{qk} - \frac{n_k}{n_r + n_k} D^2_{pq} \quad (16)
+$$
+
+
 
 ### 5.3.4 聚类过程和结果
 
@@ -435,13 +603,37 @@ $$D^2_{rk} = \frac{n_p n_q}{n_r} (\bar{X}_r - \bar{X}_k)^T (\bar{X}_r - \bar{X}_
 
 得到亚类划分标准如下：
 
-$$\xi_{MgO} + 2.10\xi_{CaO} - 1.51 > 0，样本属于高钙低镁玻璃 $$
 
-$$\xi_{MgO} + 2.10\xi_{CaO} - 1.51 < 0，样本属于低钙高镁玻璃 \quad (17)$$
 
-$$\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 > 0，样本属于高钠玻璃 $$
+$$
+\xi_{MgO} + 2.10\xi_{CaO} - 1.51 > 0，样本属于高钙低镁玻璃
+$$
 
-$$\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 < 0，样本属于低钠玻璃 \quad (18)$$
+
+
+
+
+$$
+\xi_{MgO} + 2.10\xi_{CaO} - 1.51 < 0，样本属于低钙高镁玻璃 \quad (17)
+$$
+
+
+
+
+
+$$
+\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 > 0，样本属于高钠玻璃
+$$
+
+
+
+
+
+$$
+\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 < 0，样本属于低钠玻璃 \quad (18)
+$$
+
+
 
 **【插图占位： alt text（4 号图，图片未内嵌，见同目录原 PDF）】**
 
@@ -506,7 +698,13 @@ $$\xi_{Na_2O} + 0.10\xi_{CaO} - 0.75 < 0，样本属于低钠玻璃 \quad (18)$$
 
 主成分分析法（PCA）是对数据矩阵奇异值分解（SVD）结果的解释过程，对于成分数据来说，中心对数变换过的数据集 X\* 的奇异值分解由三个矩阵决定：
 
-$$clr(X^*) = U \cdot D \cdot V^t \quad (19)$$
+
+
+$$
+clr(X^*) = U \cdot D \cdot V^t \quad (19)
+$$
+
+
 
 *   矩阵 V 的行表示变量；它的列是矩阵 D 分量的标准正交向量，称为右奇异向量、载荷或主成分；它们定义了单纯形的一组标准正交基。
 *   矩阵 D 是一个对角矩阵，其中 D 个奇异值按递减顺序排列；它们被解释为数据集中的坐标在新基上的标准差。
@@ -514,7 +712,13 @@ $$clr(X^*) = U \cdot D \cdot V^t \quad (19)$$
 
 现在选择前 r 个奇异值及其相关的前 r 个左右奇异向量，并计算 $X_r = U_r \cdot D_r \cdot V_r^t$，这是对 X\* 最好的 r 阶近似，整体的近似质量可以被以下统计量度量：
 
-$$\pi_r = \frac{\sum_{i=1}^{r} d^2_{ii}}{\sum_{j=1}^{D} d^2_{jj}} \quad (20)$$
+
+
+$$
+\pi_r = \frac{\sum_{i=1}^{r} d^2_{ii}}{\sum_{j=1}^{D} d^2_{jj}} \quad (20)
+$$
+
+
 
 除了对多维数据进行降维，主成分分析法也能解读数据集 X\* 变量之间的相关关系，这正是本文选择主成分分析的主要原因。在进行计算前，需要对数据集进行中心对数变换，使左右奇异向量能反映成分数据的相对尺度。
 

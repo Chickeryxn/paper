@@ -41,7 +41,13 @@ NIPT（Non-invasive Prenatal Test，即无创产前检测）是一种通过采�
 
 Z 值（Z-score）的计算公式：
 
-$$Z = \frac{X - \mu}{\sigma}$$
+
+
+$$
+Z = \frac{X - \mu}{\sigma}
+$$
+
+
 
 其中 $X$ 为待检测样本中目标染色体的相对计数比例， $\mu$ 为正常对照群体中该染色体计数比例的均值， $\sigma$ 为正常群体中该比例的标准差。
 

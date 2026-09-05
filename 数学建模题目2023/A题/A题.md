@@ -67,19 +67,43 @@
 
 ### 1. 太阳高度角 $\alpha_s$[3]
 
-$$\sin\alpha_s = \cos\delta\cos\varphi\cos\omega + \sin\delta\sin\varphi$$
+
+
+$$
+\sin\alpha_s = \cos\delta\cos\varphi\cos\omega + \sin\delta\sin\varphi
+$$
+
+
 
 太阳方位角 $\gamma_s$[4]
 
-$$\cos\gamma_s = \frac{\sin\delta - \sin\alpha_s\sin\varphi}{\cos\alpha_s\cos\varphi}$$
+
+
+$$
+\cos\gamma_s = \frac{\sin\delta - \sin\alpha_s\sin\varphi}{\cos\alpha_s\cos\varphi}
+$$
+
+
 
 其中 $\varphi$为当地纬度，北纬为正； $\omega$为太阳时角
 
-$$\omega = \frac{\pi}{12}(ST - 12)$$
+
+
+$$
+\omega = \frac{\pi}{12}(ST - 12)
+$$
+
+
 
 其中 $ST$为当地时间， $\delta$为太阳赤纬角[5]
 
-$$\sin\delta = \sin\frac{2\pi D}{365}\sin\left(\frac{2\pi}{360} \times 23.45\right)$$
+
+
+$$
+\sin\delta = \sin\frac{2\pi D}{365}\sin\left(\frac{2\pi}{360} \times 23.45\right)
+$$
+
+
 
 其中 $D$为以春分作为第0天起算的天数，例如，若春分是3月21日，则4月1日对应 $D = 11$。
 
@@ -87,25 +111,61 @@ $$\sin\delta = \sin\frac{2\pi D}{365}\sin\left(\frac{2\pi}{360} \times 23.45\rig
 
 是指地球上垂直于太阳光线的平面单位面积上、单位时间内接收到的太阳辐射能量，可按以下公式近似计算[6]
 
-$$DNI = G_0\left[a + b\exp\left(-\frac{c}{\sin\alpha_s}\right)\right]$$
 
-$$a = 0.4237 - 0.00821(6 - H)^2$$
 
-$$b = 0.5055 + 0.00595(6.5 - H)^2$$
+$$
+DNI = G_0\left[a + b\exp\left(-\frac{c}{\sin\alpha_s}\right)\right]
+$$
 
-$$c = 0.2711 + 0.01858(2.5 - H)^2$$
+
+
+
+
+$$
+a = 0.4237 - 0.00821(6 - H)^2
+$$
+
+
+
+
+
+$$
+b = 0.5055 + 0.00595(6.5 - H)^2
+$$
+
+
+
+
+
+$$
+c = 0.2711 + 0.01858(2.5 - H)^2
+$$
+
+
 
 其中 $G_0$为太阳常数，其值取为1.366 kW/m²， $H$为海拔高度（单位：km）。
 
 ### 3. 定日镜场的输出热功率 $E_{field}$为
 
-$$E_{field} = DNI \cdot \sum_{i}^{N} A_i\eta_i$$
+
+
+$$
+E_{field} = DNI \cdot \sum_{i}^{N} A_i\eta_i
+$$
+
+
 
 其中DNI为法向直接辐射辐照度； $N$为定日镜总数（单位：面）； $A_i$为第 $i$面定日镜采光面积（单位：m²）； $\eta_i$为第 $i$面镜子的光学效率。
 
 ### 4. 定日镜的光学效率 $\eta$为
 
-$$\eta = \eta_{sb}\eta_{cos}\eta_{at}\eta_{trunc}\eta_{ref}$$
+
+
+$$
+\eta = \eta_{sb}\eta_{cos}\eta_{at}\eta_{trunc}\eta_{ref}
+$$
+
+
 
 其中：
 

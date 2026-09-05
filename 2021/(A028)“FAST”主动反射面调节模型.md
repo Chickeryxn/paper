@@ -6,11 +6,23 @@
 
 针对问题 1，我们根据题目对理想抛物面对称轴和焦点的要求，得出了理想抛物面中参数之间的关系、参数的存在域等信息。再通过考虑促动器安装的空间特征，发现能够按照等分一定区域的圆心角的方法，设计了能模拟促动器分布、估计促动器伸缩量的模型。我们使用该模型判断抛物面是否满足促动器径向伸缩范围为-0.6～+0.6 米的要求，并以促动器伸缩量的总和最小作为评判指标评判满足要求的抛物面，找到了两个性能较好的抛物面，经过比较，最终得到理想抛物面方程为：
 
-$$z = \frac{x^2}{4(F - l_2)} + \frac{y^2}{4(F - l_2)} - 300.4 + l_2 = 0.001780x^2 + 0.001780y^2 - 300.884$$
+
+
+$$
+z = \frac{x^2}{4(F - l_2)} + \frac{y^2}{4(F - l_2)} - 300.4 + l_2 = 0.001780x^2 + 0.001780y^2 - 300.884
+$$
+
+
 
 针对问题 2，首先，为求解观测天体位于方位角α=36.795°，β=78.169°时的理想抛物面，先建立旋转矩阵和图形变换模型，得到将任意坐标或函数旋转固定角度的方法，从而将问题一中求解得到的理想抛物面方程先绕 y 轴旋转(90°-β），再绕 z 轴旋转α，得到用于观测要求天体的理想抛物面方程为：
 
-$$S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^2 - 0.0017797(0.78377x + 0.58623y - 0.20503z)^2 + 300.88 = 0$$
+
+
+$$
+S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^2 - 0.0017797(0.78377x + 0.58623y - 0.20503z)^2 + 300.88 = 0
+$$
+
+
 
 之后，为求解促动器伸缩量的最优值，使反射面尽可能贴近理想抛物面，先假设将主索节点沿径向移动到理想抛物面上，取主索节点和各反射面板圆弧中点作为统计点计算得到均方根误差为 4.2mm。设计主索节点的调整策略——调整量由自身即其周围所有圆弧中点与理想抛物面的偏差决定，计算调整后的均方根误差为 3.0mm，且其值在迭代中保持稳定，说明此时反射面拟合度已达最优。由主索节点的初始坐标与调整后的最终坐标，求得条件后反射面 300m 口径内的主索节点编号、位置坐标、各促动器的伸缩量保存在"result.xlsx"中。
 
@@ -93,9 +105,21 @@ $$S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^2
 
 根据附件二以及附件三给出的促动器地锚点、顶端、主索节点的编号和坐标，可以按编号将地锚点ULᵢ、顶端UHᵢ、主索节点Uᵢ进行对应，并分析这三点与基准球球心C的相对位置。计算向量 $\overrightarrow{UL_iU_i}$, $\overrightarrow{UL_iC}$与 $\overrightarrow{UH_iU_i}$, $\overrightarrow{UH_iC}$的夹角γ₁,γ₂：
 
-$$\gamma_1 = arcsin\frac{|\overrightarrow{UL_iU_i} \times \overrightarrow{UL_iC}|}{|\overrightarrow{UL_iU_i}||\overrightarrow{UL_iC}|}$$
 
-$$\gamma_2 = arcsin\frac{|\overrightarrow{UH_iU_i} \times \overrightarrow{UH_iC}|}{|\overrightarrow{UH_iU_i}||\overrightarrow{UH_iC}|}$$
+
+$$
+\gamma_1 = arcsin\frac{|\overrightarrow{UL_iU_i} \times \overrightarrow{UL_iC}|}{|\overrightarrow{UL_iU_i}||\overrightarrow{UL_iC}|}
+$$
+
+
+
+
+
+$$
+\gamma_2 = arcsin\frac{|\overrightarrow{UH_iU_i} \times \overrightarrow{UH_iC}|}{|\overrightarrow{UH_iU_i}||\overrightarrow{UH_iC}|}
+$$
+
+
 
 本题中绝大多数的夹角弧度值都为或者低于 $10^{-3}$水平，故可以认为所有节点都满足促动器地锚点、顶端、主索节点、基准球球心共线。因此，可以认为所有主索节点的调整方向都是节点关于基准球的径向，并定义使节点远离球心的调整方向为负向，靠近球心的调整方向为正向。
 
@@ -113,7 +137,13 @@ $$\gamma_2 = arcsin\frac{|\overrightarrow{UH_iU_i} \times \overrightarrow{UH_iC}
 
 根据附件 1 中基准球面与SC的交点为一主索节点，坐标为(0,0,-300.4)，结合条件 1，可以设理想抛物面的顶点为(0,0, −300.4 + l)，则l为该主索节点的移动量，根据条件 3 则有−0.6 ≤ l ≤ 0.6。抛物面顶点与P点距离为F − l，由条件二可知抛物面的焦距即为F − l。故抛物面的方程为：
 
-$$z = \frac{x^2}{4(F - l)} + \frac{y^2}{4(F - l)} - 300.4 + l \quad (1)$$
+
+
+$$
+z = \frac{x^2}{4(F - l)} + \frac{y^2}{4(F - l)} - 300.4 + l \quad (1)
+$$
+
+
 
 2）促动器伸缩量的估计：
 
@@ -125,11 +155,23 @@ $$z = \frac{x^2}{4(F - l)} + \frac{y^2}{4(F - l)} - 300.4 + l \quad (1)$$
 
 通过遍历φ得到最大径向偏离差：
 
-$$l_{max} = max_{\phi}|l_\phi| \quad (2)$$
+
+
+$$
+l_{max} = max_{\phi}|l_\phi| \quad (2)
+$$
+
+
 
 通过遍历φ得到总径向偏离差水平：
 
-$$l_{sum} = \sum_{\phi}|l_\phi(2\pi R sin\phi)| \quad (3)$$
+
+
+$$
+l_{sum} = \sum_{\phi}|l_\phi(2\pi R sin\phi)| \quad (3)
+$$
+
+
 
 由条件 3 的限制，应该有 $l_{max} \leq 0.6$。
 
@@ -141,7 +183,13 @@ $$l_{sum} = \sum_{\phi}|l_\phi(2\pi R sin\phi)| \quad (3)$$
 
 考虑到在平面直角坐标系下，求解抛物线上的点与圆之间的径向距离较繁琐，故采用建立以抛物线焦点为极点，Z 轴正向为极轴的坐标系，有表达式如下：
 
-$$\begin{cases} \rho = \frac{p}{1 - \cos(\theta)} \\ p = F - l \quad (-0.6 < l < 0.6) \end{cases} \quad (4)$$
+
+
+$$
+\begin{cases} \rho = \frac{p}{1 - \cos(\theta)} \\ p = F - l \quad (-0.6 < l < 0.6) \end{cases} \quad (4)
+$$
+
+
 
 其中(ρ, θ)为抛物线的点的极坐标，p = F − l (−0.6 < l < 0.6)是由 3 个条件导出的结论。
 
@@ -171,7 +219,13 @@ $$\begin{cases} \rho = \frac{p}{1 - \cos(\theta)} \\ p = F - l \quad (-0.6 < l <
 
 我们猜想 $l_{sum}$反映了促动器总伸缩量水平，认为最优理想曲面为第二类理想曲面，所求的抛物面方程为：
 
-$$z = 0.001780x^{2} + 0.001780y^{2} - 300.884 \quad (11)$$
+
+
+$$
+z = 0.001780x^{2} + 0.001780y^{2} - 300.884 \quad (11)
+$$
+
+
 
 然而次伸缩量水平只是一个估计值而非实际值，该猜想是否正确，即第二类曲面的促动器总伸缩量是否确实大于第一类，需要通过主索节点的具体坐标量化计算，这部分将在问题2中的模型进行验证。验证结果为第二类确实优于第一类。
 
@@ -183,7 +237,13 @@ $$z = 0.001780x^{2} + 0.001780y^{2} - 300.884 \quad (11)$$
 
 在二维平面上，记原点为 $O$，平面上一点 $A$，则将 $\overrightarrow{OA}$逆时针旋转 $\theta$角所得的 $\overrightarrow{OA'}$满足：
 
-$$\begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} \overrightarrow{OA} \end{pmatrix}^{T}$$
+
+
+$$
+\begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} \overrightarrow{OA} \end{pmatrix}^{T}
+$$
+
+
 
 这样的 $R = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}$称为二维空间逆时针旋转 $\theta$角的旋转矩阵。
 
@@ -195,37 +255,85 @@ $$\begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = \begin{pmatrix} \cos\
 
 绕 $X$轴在 $YZ$平面逆时针旋转 $\theta_x$的旋转矩阵为：
 
-$$R_x = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta_x & -\sin\theta_x \\ 0 & \sin\theta_x & \cos\theta_x \end{pmatrix}$$
+
+
+$$
+R_x = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta_x & -\sin\theta_x \\ 0 & \sin\theta_x & \cos\theta_x \end{pmatrix}
+$$
+
+
 
 它可以看作是向量的第一个分量（ $X$坐标）不发生改变，而后两个分量在对应的平面上进行二维旋转所得到的矩阵。同理，绕 $Y$轴在 $ZX$平面逆时针旋转 $\theta_y$的旋转矩阵为
 
-$$R_y = \begin{pmatrix} \cos\theta_y & 0 & -\sin\theta_y \\ 0 & 1 & 0 \\ \sin\theta_y & 0 & \cos\theta_y \end{pmatrix}$$
+
+
+$$
+R_y = \begin{pmatrix} \cos\theta_y & 0 & -\sin\theta_y \\ 0 & 1 & 0 \\ \sin\theta_y & 0 & \cos\theta_y \end{pmatrix}
+$$
+
+
 
 绕 $Z$轴在 $XY$平面逆时针旋转 $\theta_z$的旋转矩阵为
 
-$$R_z = \begin{pmatrix} \cos\theta_z & -\sin\theta_z & 0 \\ \sin\theta_z & \cos\theta_z & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+
+$$
+R_z = \begin{pmatrix} \cos\theta_z & -\sin\theta_z & 0 \\ \sin\theta_z & \cos\theta_z & 0 \\ 0 & 0 & 1 \end{pmatrix}
+$$
+
+
 
 再根据具体问题判断基本旋转的复合顺序，将基本旋转的旋转矩阵相乘即得到总的旋转矩阵。例如：依次绕 $X$、 $Y$、 $Z$轴旋转时，旋转矩阵 $R = R_x R_y R_z$，记原点为 $O$，空间内一点 $A$， $\overrightarrow{OA}$旋转所得的 $\overrightarrow{OA'}$满足：
 
-$$\begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = R \begin{pmatrix} \overrightarrow{OA} \end{pmatrix}^{T}$$
+
+
+$$
+\begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = R \begin{pmatrix} \overrightarrow{OA} \end{pmatrix}^{T}
+$$
+
+
 
 5.2.1.2 图形变换：
 
 在三维空间中，记一图形方程为：
 
-$$F(x, y, z) = 0$$
+
+
+$$
+F(x, y, z) = 0
+$$
+
+
 
 记一可逆坐标变换为：
 
-$$\begin{pmatrix} x', y', z' \end{pmatrix} = \phi(x, y, z)$$
+
+
+$$
+\begin{pmatrix} x', y', z' \end{pmatrix} = \phi(x, y, z)
+$$
+
+
 
 记 $\phi^{-1}$为它的逆变换。对 $F$上的点 $(a, b, c)$可知以下式子成立：
 
-$$F \circ \phi^{-1} \begin{pmatrix} a', b', c' \end{pmatrix} = F(a, b, c) = 0$$
+
+
+$$
+F \circ \phi^{-1} \begin{pmatrix} a', b', c' \end{pmatrix} = F(a, b, c) = 0
+$$
+
+
 
 故点 $\begin{pmatrix} a', b', c' \end{pmatrix}$在 $F \circ \phi^{-1}$ 所表示的图形上，且 $F \circ \phi^{-1}$所表示的图形上的点全为 $\begin{pmatrix} a', b', c' \end{pmatrix}$形式的点。即在 $\phi$这一可逆坐标变换下，新的图形方程为：
 
-$$F \circ \phi^{-1}(x, y, z) = 0 \quad (12)$$
+
+
+$$
+F \circ \phi^{-1}(x, y, z) = 0 \quad (12)
+$$
+
+
 
 5.2.2 模型建立：
 
@@ -233,23 +341,53 @@ $$F \circ \phi^{-1}(x, y, z) = 0 \quad (12)$$
 
 根据模型准备中旋转矩阵与图形变换的结论，将问题 1 中求解的理想抛物面 $S$为：
 
-$$S(x, y, z) = 0$$
+
+
+$$
+S(x, y, z) = 0
+$$
+
+
 
 进行先绕Y轴逆时针旋转 $90° - \beta$角，再绕 $Z$轴逆时针旋转 $\alpha$角的旋转坐标变换 $\phi$为：
 
-$$\phi(x, y, z) = \begin{pmatrix} R_z R_y (x, y, z)^{T} \end{pmatrix}^{T}$$
+
+
+$$
+\phi(x, y, z) = \begin{pmatrix} R_z R_y (x, y, z)^{T} \end{pmatrix}^{T}
+$$
+
+
 
 逆变换 $\phi^{-1}$为：
 
-$$\phi^{-1}(x, y, z) = \begin{pmatrix} R_y^{-1} R_z^{-1} (x, y, z)^{T} \end{pmatrix}^{T}$$
+
+
+$$
+\phi^{-1}(x, y, z) = \begin{pmatrix} R_y^{-1} R_z^{-1} (x, y, z)^{T} \end{pmatrix}^{T}
+$$
+
+
 
 其中
 
-$$R_y = \begin{pmatrix} \cos(90° - \beta) & 0 & -\sin(90° - \beta) \\ 0 & 1 & 0 \\ \sin(90° - \beta) & 0 & \cos(90° - \beta) \end{pmatrix}, \quad R_z = \begin{pmatrix} \cos\alpha & -\sin\alpha & 0 \\ \sin\alpha & \cos\alpha & 0 \\ 0 & 0 & 1 \end{pmatrix}$$
+
+
+$$
+R_y = \begin{pmatrix} \cos(90° - \beta) & 0 & -\sin(90° - \beta) \\ 0 & 1 & 0 \\ \sin(90° - \beta) & 0 & \cos(90° - \beta) \end{pmatrix}, \quad R_z = \begin{pmatrix} \cos\alpha & -\sin\alpha & 0 \\ \sin\alpha & \cos\alpha & 0 \\ 0 & 0 & 1 \end{pmatrix}
+$$
+
+
 
 则旋转后的抛物面 $S'$为：
 
-$$S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0 \quad (13)$$
+
+
+$$
+S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0 \quad (13)
+$$
+
+
 
 5.2.2.2 促动器调节模型：
 
@@ -259,7 +397,13 @@ $$S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0 \quad (13)$$
 
 设各统计点为 $X_i'$，连接球心 $O$与统计点，与理想抛物面交于 $X_i$，则均方根误差的计算方法为：
 
-$$RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| \overrightarrow{CX_i'} - \overrightarrow{CX_i} \right|^{2}} \quad (14)$$
+
+
+$$
+RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| \overrightarrow{CX_i'} - \overrightarrow{CX_i} \right|^{2}} \quad (14)
+$$
+
+
 
 由于主索节点都在理想抛物面上，因此拟合误差来源于圆弧中点。通过微调主索节点位置，可能可以减小 $RMS$，提高拟合优度，其大致示意图如下：
 
@@ -277,11 +421,23 @@ $$RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| \overrightarrow{CX_i'} - \overri
 
 设主索节点连接 $k$个圆弧，圆弧上的中点记为 $X_j$，主索节点记为 $P$，构造统计量 $D$：
 
-$$D = \frac{1}{2k} \left( \sum_{j=1}^{k} \left( \left| \overrightarrow{CX_j'} \right| - \left| \overrightarrow{CX_j} \right| \right) + k \left( \left| \overrightarrow{CP'} \right| - \left| \overrightarrow{CP} \right| \right) \right) \quad (15)$$
+
+
+$$
+D = \frac{1}{2k} \left( \sum_{j=1}^{k} \left( \left| \overrightarrow{CX_j'} \right| - \left| \overrightarrow{CX_j} \right| \right) + k \left( \left| \overrightarrow{CP'} \right| - \left| \overrightarrow{CP} \right| \right) \right) \quad (15)
+$$
+
+
 
 式中， $X_j$为统计点与球心的连线与理想抛物面的交点，其求解方法与求主索节点在理想抛物面上的坐标相同，此处不再赘述。调整原理为：若 $D > 0$，说明该主索节点周围的反射面板较多落在在抛物面外侧（即距球心较远），其需要向球心移动，对应促动器伸缩量为正，反之为负。设伸缩量调整值为 $d$，则
 
-$$d = D$$
+
+
+$$
+d = D
+$$
+
+
 
 据此调节方案同时调节每个主索节点，可以计算得到新的主索节点坐标和各统计点坐标，得到新的均方根误差 $RMS'$,若 $RMS' < RMS$，说明该调整是有效的。计算新的统计量 $D'$，继续对主索节点坐标进行调整，直至统计量 $D$的变化值很小，可认为此时拟合已达最优。[2 4]
 
@@ -291,19 +447,43 @@ $$d = D$$
 
 根据模型准备中旋转矩阵与图形变换的结论，将问题 1 中求解的理想抛物面 $S$为：
 
-$$S(x, y, z) = 0.001780x^{2} + 0.001780y^{2} - z - 300.884 = 0$$
+
+
+$$
+S(x, y, z) = 0.001780x^{2} + 0.001780y^{2} - z - 300.884 = 0
+$$
+
+
 
 则旋转后的抛物面S'为：
 
-$$S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0$$
+
+
+$$
+S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0
+$$
+
+
 
 即：
 
-$$S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^{2} - 0.0017797(0.78377x + 0.58623y - 0.20503z)^{2} + 300.88 = 0$$
+
+
+$$
+S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^{2} - 0.0017797(0.78377x + 0.58623y - 0.20503z)^{2} + 300.88 = 0
+$$
+
+
 
 由于问题 1 中理想抛物面顶点为 $(0,0, -300.884)$，经 $\phi$的旋转坐标变换后，得到问题 2中抛物面的顶点坐标为 $\begin{pmatrix} R_x^{-1} R_z^{-1} (0,0, -300.884)^{T} \end{pmatrix}^{T}$，为：
 
-$$(-49.3194, -36.8890, -294.0187)$$
+
+
+$$
+(-49.3194, -36.8890, -294.0187)
+$$
+
+
 
 5.2.3.2 促动器调节模型求解：
 
@@ -311,19 +491,43 @@ $$(-49.3194, -36.8890, -294.0187)$$
 
 设基准球面上一主索节点为 $X(x_0, y_0, z_0)$，则可得到其与球心连线的直线方程：
 
-$$\frac{x - x_0}{x_0} = \frac{y - y_0}{y_0} = \frac{z - z_0}{z_0} \quad (x_0, y_0, z_0 \neq 0) \quad (16)$$
+
+
+$$
+\frac{x - x_0}{x_0} = \frac{y - y_0}{y_0} = \frac{z - z_0}{z_0} \quad (x_0, y_0, z_0 \neq 0) \quad (16)
+$$
+
+
 
 为完整表示 $x_0$、 $y_0$、 $z_0$为 0 的情况，可表示为参数方程：
 
-$$\begin{cases} x = x_0 t + x_0 \\ y = y_0 t + y_0 \\ z = z_0 t + z_0 \end{cases}, \quad t为参数 \quad (17)$$
+
+
+$$
+\begin{cases} x = x_0 t + x_0 \\ y = y_0 t + y_0 \\ z = z_0 t + z_0 \end{cases}, \quad t为参数 \quad (17)
+$$
+
+
 
 已知抛物面方程 $F(x, y, z) = 0$代入即可求得连线与理想抛物面的焦点，即为主索节点移动到理想抛物面上时的坐标。
 
 求得主索节点在理想抛物面上的坐标后，可粗略求出各促动器伸缩量，从而验证模型一中设计的评价总伸缩量水平的指标 $l_{sum}$是合理的。设将主索节点移动到理想抛物线上时，促动器的总伸缩量（绝对值）为 $LSUM$：
 
-$$LSUM_1 = \sum_{i=1}^{n_1} \left| \overrightarrow{X_{0i}X_{1i}} \right| \quad (18)$$
 
-$$LSUM_2 = \sum_{i=1}^{n_2} \left| \overrightarrow{X_{0i}X_{2i}} \right| \quad (19)$$
+
+$$
+LSUM_1 = \sum_{i=1}^{n_1} \left| \overrightarrow{X_{0i}X_{1i}} \right| \quad (18)
+$$
+
+
+
+
+
+$$
+LSUM_2 = \sum_{i=1}^{n_2} \left| \overrightarrow{X_{0i}X_{2i}} \right| \quad (19)
+$$
+
+
 
 $LSUM_1$：第一类抛物面的 $LSUM$
 
@@ -337,9 +541,21 @@ $X_{2i}$：第二类理想抛物面上的主索节点
 
 代入数据解得：
 
-$$LSUM_1 = 141.0033$$
 
-$$LSUM_2 = 114.8469$$
+
+$$
+LSUM_1 = 141.0033
+$$
+
+
+
+
+
+$$
+LSUM_2 = 114.8469
+$$
+
+
 
 $LSUM_2 > LSUM_1$,因此说明模型 1 中的伸缩量水平的指标 $l_{sum}$是合理的，也即所选取的第二类理想曲面是合理的。
 
@@ -349,15 +565,39 @@ $LSUM_2 > LSUM_1$,因此说明模型 1 中的伸缩量水平的指标 $l_{sum}$�
 
 设球面方程为：
 
-$$(x - x_c')^{2} + (y - y_c')^{2} + (z - z_c')^{2} = 0$$
+
+
+$$
+(x - x_c')^{2} + (y - y_c')^{2} + (z - z_c')^{2} = 0
+$$
+
+
 
 设反射面板三个顶点为 P、Q、T，代入球面方程：
 
-$$(x_P - x_c')^{2} + (y_P - y_c')^{2} + (z_P - z_c')^{2} = 0$$
 
-$$\begin{pmatrix} x_Q - x_c' \end{pmatrix}^{2} + \begin{pmatrix} y_Q - y_c' \end{pmatrix}^{2} + \begin{pmatrix} z_Q - z_c' \end{pmatrix}^{2} = 0$$
 
-$$(x_T - x_c')^{2} + (y_T - y_c')^{2} + (z_T - z_c')^{2} = 0$$
+$$
+(x_P - x_c')^{2} + (y_P - y_c')^{2} + (z_P - z_c')^{2} = 0
+$$
+
+
+
+
+
+$$
+\begin{pmatrix} x_Q - x_c' \end{pmatrix}^{2} + \begin{pmatrix} y_Q - y_c' \end{pmatrix}^{2} + \begin{pmatrix} z_Q - z_c' \end{pmatrix}^{2} = 0
+$$
+
+
+
+
+
+$$
+(x_T - x_c')^{2} + (y_T - y_c')^{2} + (z_T - z_c')^{2} = 0
+$$
+
+
 
 联立解得球心坐标。
 
@@ -367,9 +607,21 @@ $$(x_T - x_c')^{2} + (y_T - y_c')^{2} + (z_T - z_c')^{2} = 0$$
 
 设 $P$、 $Q$中点为 $M_{PQ}$， $P$、 $Q$圆弧中点为 $N_{PQ}$则：
 
-$$M_{PQ} \begin{pmatrix} \frac{x_P + x_Q}{2}, \frac{y_P + y_Q}{2}, \frac{z_P + z_Q}{2} \end{pmatrix}$$
 
-$$\overrightarrow{CN_{PQ}} = R \cdot \frac{\overrightarrow{CM_{PQ}}}{\left| CM_{PQ} \right|}$$
+
+$$
+M_{PQ} \begin{pmatrix} \frac{x_P + x_Q}{2}, \frac{y_P + y_Q}{2}, \frac{z_P + z_Q}{2} \end{pmatrix}
+$$
+
+
+
+
+
+$$
+\overrightarrow{CN_{PQ}} = R \cdot \frac{\overrightarrow{CM_{PQ}}}{\left| CM_{PQ} \right|}
+$$
+
+
 
 由此求得 $N_{PQ}$的坐标，同理可求得各圆弧中点坐标。
 
@@ -377,15 +629,33 @@ $$\overrightarrow{CN_{PQ}} = R \cdot \frac{\overrightarrow{CM_{PQ}}}{\left| CM_{
 
 将各统计点坐标代入公式：
 
-$$𝑅𝑀𝑆 = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left| \overrightarrow{CX_{i}^{理想}} - \overrightarrow{CX_{i}^{实际}} \right|^{2}}$$
+
+
+$$
+𝑅𝑀𝑆 = \sqrt{\frac{1}{n}\sum_{i=1}^{n}\left| \overrightarrow{CX_{i}^{理想}} - \overrightarrow{CX_{i}^{实际}} \right|^{2}}
+$$
+
+
 
 求得主索节点在理想抛物面上时，均方根误差为：
 
-$$𝑅𝑀𝑆 = 0.0042\,m = 4.2\,mm$$
+
+
+$$
+𝑅𝑀𝑆 = 0.0042\,m = 4.2\,mm
+$$
+
+
 
 将各统计点坐标代入公式：
 
-$$d = D = \frac{1}{2k}\left[ \sum_{j=1}^{k}\left( \left| \overrightarrow{CX_{j}^{理想}} \right| - \left| \overrightarrow{CX_{j}^{实际}} \right| \right) + k\left( \left| \overrightarrow{CP_{理想}} \right| - \left| \overrightarrow{CP_{实际}} \right| \right) \right] \quad (21)$$
+
+
+$$
+d = D = \frac{1}{2k}\left[ \sum_{j=1}^{k}\left( \left| \overrightarrow{CX_{j}^{理想}} \right| - \left| \overrightarrow{CX_{j}^{实际}} \right| \right) + k\left( \left| \overrightarrow{CP_{理想}} \right| - \left| \overrightarrow{CP_{实际}} \right| \right) \right] \quad (21)
+$$
+
+
 
 求得各主索节点第一次微调的距离。调整后得到新的主索节点坐标，以新的主索节点坐标为基础，计算均方根误差和下一轮的微调距离……迭代 3 次，结果如下表：
 
@@ -399,7 +669,13 @@ $$d = D = \frac{1}{2k}\left[ \sum_{j=1}^{k}\left( \left| \overrightarrow{CX_{j}^
 
 从表中可以看出，第一次微调后，均方根误差显著减小，下次需再调整的距离也下降到了一个很小的数量级，说明该调整策略是有效的，且仅需一次调整即可。最终得到：
 
-$$𝑅𝑀𝑆 = 0.0030\,m = 3.0\,mm$$
+
+
+$$
+𝑅𝑀𝑆 = 0.0030\,m = 3.0\,mm
+$$
+
+
 
 部分主索节点编号、位置坐标及其对应的促动器的伸缩量如下：
 
@@ -431,11 +707,23 @@ $$𝑅𝑀𝑆 = 0.0030\,m = 3.0\,mm$$
 
 𝐶为球心，入射到球面上一点𝑀的电磁波信号，其反射电磁波信号与过球心的入射电磁波信号交于点𝐹。设入射电磁波信号与𝐶𝑀的夹角为𝜃，则：
 
-$$𝐶𝐹 = \frac{R}{2\cos\theta}$$
+
+
+$$
+𝐶𝐹 = \frac{R}{2\cos\theta}
+$$
+
+
 
 越往内（距球心越近）的电磁波信号，其夹角𝜃越小，且：
 
-$$\lim_{\theta \to 0}\frac{R}{2\cos\theta} = \frac{R}{2}$$
+
+
+$$
+\lim_{\theta \to 0}\frac{R}{2\cos\theta} = \frac{R}{2}
+$$
+
+
 
 称为圆反射面的焦距。越往外的电磁波信号（距球心越远），其夹角𝜃越大，反射电磁波信号与过圆心入射电磁波信号的交点离圆心越远，如图：
 
@@ -451,11 +739,23 @@ $$\lim_{\theta \to 0}\frac{R}{2\cos\theta} = \frac{R}{2}$$
 
 如图，在同一平面上有△𝐴𝐵𝐶，𝑃是平面上任意一点。直线𝐴𝐵将平面分成两个半平面以及直线𝐴𝐵自身。我们称𝐶所在的半平面是𝐴𝐵的内侧。同理，𝐵𝐶的内侧是直线𝐵𝐶分出来的𝐴所在的半平面；𝐶𝐴的内侧是直线𝐶𝐴分出来的𝐵所在的半平面。记：
 
-$$J_{AB} = \left( \overrightarrow{AB} \times \overrightarrow{AP} \right) \cdot \left( \overrightarrow{AB} \times \overrightarrow{AC} \right)$$
+
+
+$$
+J_{AB} = \left( \overrightarrow{AB} \times \overrightarrow{AP} \right) \cdot \left( \overrightarrow{AB} \times \overrightarrow{AC} \right)
+$$
+
+
 
 可知当𝐽_{𝐴𝐵} > 0时，𝑃与𝐶在𝐴𝐵的同侧，即𝑃在𝐴𝐵的内侧。同理记：
 
-$$J_{BC} = \left( \overrightarrow{BC} \times \overrightarrow{BP} \right) \cdot \left( \overrightarrow{BC} \times \overrightarrow{BA} \right), \quad J_{CA} = \left( \overrightarrow{CA} \times \overrightarrow{CP} \right) \cdot \left( \overrightarrow{CA} \times \overrightarrow{CB} \right)$$
+
+
+$$
+J_{BC} = \left( \overrightarrow{BC} \times \overrightarrow{BP} \right) \cdot \left( \overrightarrow{BC} \times \overrightarrow{BA} \right), \quad J_{CA} = \left( \overrightarrow{CA} \times \overrightarrow{CP} \right) \cdot \left( \overrightarrow{CA} \times \overrightarrow{CB} \right)
+$$
+
+
 
 可知，当且仅当𝑃同时在𝐴𝐵、𝐵𝐶、𝐶𝐴的内侧时，𝑃在△𝐴𝐵𝐶内部。当且仅当𝐽_{𝐵𝐶}、𝐽_{𝐶𝐴}、𝐽_{𝐴𝐵}同时大于 0 时，𝑃在△𝐴𝐵𝐶内部。
 
@@ -481,11 +781,23 @@ $$J_{BC} = \left( \overrightarrow{BC} \times \overrightarrow{BP} \right) \cdot \
 
 对于理想抛物面，平行于旋转轴入射的电磁波信号会聚于焦点处，将馈源舱置于焦点处，则理想抛物面的接收比为 100%。但在实际工作时，由于每块反射面板的形状是球面的一部分，其反射电磁波信号不会会聚于馈源舱。对于每块反射面板，其反射信号可能被馈源舱完全吸收、吸收一部分或完全未吸收。因此，我们可以定义单元接收比𝜂_𝑖。
 
-$$\text{单元接收比} = \frac{\text{单个反射面反射信号被馈源舱接收的部分}}{\text{单个反射面的反射信号}}$$
+
+
+$$
+\text{单元接收比} = \frac{\text{单个反射面反射信号被馈源舱接收的部分}}{\text{单个反射面的反射信号}}
+$$
+
+
 
 其计算方式为：
 
-$$\eta_i = \frac{S_{重叠}}{S_{投影}} \times 100\%$$
+
+
+$$
+\eta_i = \frac{S_{重叠}}{S_{投影}} \times 100\%
+$$
+
+
 
 - 𝜂_𝑖：单元接收比
 - 𝑆_投影：单个反射面的反射电磁波信号在馈源舱所在平面的投影面积
@@ -493,19 +805,43 @@ $$\eta_i = \frac{S_{重叠}}{S_{投影}} \times 100\%$$
 
 要确定𝑆_投影和𝑆_重叠，首先要确定馈源舱的位置。设馈源舱中心所在点𝑃。当观测天体位于正上方时，有：
 
-$$\frac{\overrightarrow{CP}}{|CP|} = (0, 0, -1)$$
+
+
+$$
+\frac{\overrightarrow{CP}}{|CP|} = (0, 0, -1)
+$$
+
+
 
 当观测天体的方位角为𝛼，仰角为𝛽时，根据向量旋转，有：
 
-$$\frac{\overrightarrow{CP}}{|CP|} = (-0.1642, -0.1228, -0.9788)$$
+
+
+$$
+\frac{\overrightarrow{CP}}{|CP|} = (-0.1642, -0.1228, -0.9788)
+$$
+
+
 
 题目中给出焦径比 $\frac{F}{R}$为 0.466，有：
 
-$$|CP| = (1 - 0.466)R$$
+
+
+$$
+|CP| = (1 - 0.466)R
+$$
+
+
 
 可以得到𝑃点坐标，记为 $P(x_p, y_p, z_p)$。则馈源舱所在平面的方程为：
 
-$$x_p x + y_p y + z_p z = |CP|^2$$
+
+
+$$
+x_p x + y_p y + z_p z = |CP|^2
+$$
+
+
 
 对于每一个反射面板，其三个顶点坐标已知，半径固定，入射电磁波信号方向已知。由此可以求得入射电磁波信号在三个顶点处的反射电磁波信号，三条反射电磁波信号与馈源舱所在平面相交，交点相连，计算三角形面积即可近似得到𝑆_投影，其求解过程见模型求解部分。
 
@@ -521,13 +857,31 @@ $$x_p x + y_p y + z_p z = |CP|^2$$
 
 由于每个反射面板反射的信号量不同，因此馈源舱接收比并不等于单元接收比的均值，而给每个接收比赋予一个权重𝑤_𝑖：
 
-$$\text{单元接收比权重} = \frac{\text{单个反射面板反射信号量}}{\text{工作反射面反射信号总量}}$$
+
+
+$$
+\text{单元接收比权重} = \frac{\text{单个反射面板反射信号量}}{\text{工作反射面反射信号总量}}
+$$
+
+
 
 也可称这个权重为单元面板反射信号比，其计算方式为：
 
-$$w_i = \frac{S_{vi}}{S_{sum}}$$
 
-$$S_{sum} = \sum_{i=1}^{n} S_{vi}$$
+
+$$
+w_i = \frac{S_{vi}}{S_{sum}}
+$$
+
+
+
+
+
+$$
+S_{sum} = \sum_{i=1}^{n} S_{vi}
+$$
+
+
 
 - 𝑤_𝑖：单元面板反射信号比（单元接收比权重）
 - 𝑆_𝑣𝑖：单个反射面板在与入射信号垂直的平面上的投影面积
@@ -535,13 +889,25 @@ $$S_{sum} = \sum_{i=1}^{n} S_{vi}$$
 
 入射电磁波信号方向即为 $\overrightarrow{CP}$方向，为简单起见，可以设与入射电磁波信号垂直的一个投影面为：
 
-$$x_p x + y_p y + z_p z = 0$$
+
+
+$$
+x_p x + y_p y + z_p z = 0
+$$
+
+
 
 由于每个反射面板的顶点坐标已知，则其投影到该面的点的坐标可求，由此可以计算出𝑆_𝑣𝑖；求解过程见模型求解部分。
 
 馈源舱的总接收比为：
 
-$$\eta = \sum_{i=1}^{n} w_i \eta_i$$
+
+
+$$
+\eta = \sum_{i=1}^{n} w_i \eta_i
+$$
+
+
 
 #### 5.3.2.2 基准反射球面接收比：
 
@@ -555,31 +921,79 @@ $$\eta = \sum_{i=1}^{n} w_i \eta_i$$
 
 各点坐标：
 
-$$M(-R\sin\theta, -R\cos\theta)$$
 
-$$F\left(0, -\frac{R}{2\cos\theta}\right)$$
 
-$$E(x_E, -(1 - 0.466)R)$$
+$$
+M(-R\sin\theta, -R\cos\theta)
+$$
+
+
+
+
+
+$$
+F\left(0, -\frac{R}{2\cos\theta}\right)
+$$
+
+
+
+
+
+$$
+E(x_E, -(1 - 0.466)R)
+$$
+
+
 
 可得直线𝑀𝐹的方程：
 
-$$y = \frac{1}{\tan 2\theta} x - \frac{R}{2\cos\theta}$$
+
+
+$$
+y = \frac{1}{\tan 2\theta} x - \frac{R}{2\cos\theta}
+$$
+
+
 
 求𝐸点横坐标：
 
-$$\frac{1}{\tan 2\theta} x_E - \frac{R}{2\cos\theta} = -(1 - 0.466)R$$
+
+
+$$
+\frac{1}{\tan 2\theta} x_E - \frac{R}{2\cos\theta} = -(1 - 0.466)R
+$$
+
+
 
 得：
 
-$$x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)$$
+
+
+$$
+x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
+$$
+
+
 
 基准反射球面上的点反射的信号能被馈源舱接收的充要条件为：
 
-$$-0.5 < x_E < 0.5$$
+
+
+$$
+-0.5 < x_E < 0.5
+$$
+
+
 
 可以求出满足该条件的𝜃的范围，从而求解出反射信号能被馈源舱接收的点的范围。设基准反射球面接收比为𝜂_基准，则：
 
-$$\eta_{基准} = \frac{S_v}{\pi \times 150^2}$$
+
+
+$$
+\eta_{基准} = \frac{S_v}{\pi \times 150^2}
+$$
+
+
 
 其中𝑆_𝑣为反射信号能被馈源舱接收的范围在水平面的投影，其求解过程见模型求解部分。
 
@@ -597,25 +1011,61 @@ $$\eta_{基准} = \frac{S_v}{\pi \times 150^2}$$
 
 图中𝐶'为由反射面板三顶点确定的球心，而非基准球面球心，其坐标求解在模型二中已讨论过，此处不再赘述。入射电磁波信号方向为 $\overrightarrow{CP}$（𝐶为基准球面球心，𝑃为馈源舱中心）；则：
 
-$$\cos\theta = \left< \overrightarrow{CP} \cdot \overrightarrow{C'U} \right> = \frac{\left| \overrightarrow{CP} \cdot \overrightarrow{C'U} \right|}{|CP||C'U|}$$
 
-$$\overrightarrow{C'F} = \frac{R}{2\cos\theta} \cdot \frac{\overrightarrow{CP}}{|CP|}$$
 
-$$\overrightarrow{UF} = \overrightarrow{C'U} - \overrightarrow{C'F} = (l, m, n)$$
+$$
+\cos\theta = \left< \overrightarrow{CP} \cdot \overrightarrow{C'U} \right> = \frac{\left| \overrightarrow{CP} \cdot \overrightarrow{C'U} \right|}{|CP||C'U|}
+$$
+
+
+
+
+
+$$
+\overrightarrow{C'F} = \frac{R}{2\cos\theta} \cdot \frac{\overrightarrow{CP}}{|CP|}
+$$
+
+
+
+
+
+$$
+\overrightarrow{UF} = \overrightarrow{C'U} - \overrightarrow{C'F} = (l, m, n)
+$$
+
+
 
 则直线𝑈𝐹的参数方程为：
 
-$$\begin{cases} x = lt + x_u \\ y = mt + y_u \\ z = nt + z_u \end{cases}, \quad t为参数 $$
+
+
+$$
+\begin{cases} x = lt + x_u \\ y = mt + y_u \\ z = nt + z_u \end{cases}, \quad t为参数
+$$
+
+
 
 馈源舱所在平面的方程为：
 
-$$x_p x + y_p y + z_p z = |CP|^2$$
+
+
+$$
+x_p x + y_p y + z_p z = |CP|^2
+$$
+
+
 
 联立直线方程和平面方程，求解即可得到 U 点反射的电磁波信号与馈源舱所在平面的交点𝑊。
 
 对一个单元反射面板，设其三个顶点反射电磁波信号与馈源舱所在平面的交点为𝑊₁，𝑊₂，𝑊₃，则：
 
-$$S_{投影} = \frac{1}{2} \left| \overrightarrow{W_1 W_2} \times \overrightarrow{W_1 W_3} \right|$$
+
+
+$$
+S_{投影} = \frac{1}{2} \left| \overrightarrow{W_1 W_2} \times \overrightarrow{W_1 W_3} \right|
+$$
+
+
 
 用蒙特卡洛方法求解𝑆_重叠，并计算得到单元接收比𝜂_𝑖，部分结果如下：
 
@@ -635,33 +1085,81 @@ $$S_{投影} = \frac{1}{2} \left| \overrightarrow{W_1 W_2} \times \overrightarro
 
 首先求单个反射面板在与入射电磁波垂直方向上的投影。取投影面：
 
-$$x_p x + y_p y + z_p z = |CP|^2$$
+
+
+$$
+x_p x + y_p y + z_p z = |CP|^2
+$$
+
+
 
 过反射面板一点𝑈且与投影面垂直的直线方程：
 
-$$\begin{cases} x = x_p t + x_u \\ y = y_p t + y_u \\ z = z_p t + z_u \end{cases}, \quad t为参数 $$
+
+
+$$
+\begin{cases} x = x_p t + x_u \\ y = y_p t + y_u \\ z = z_p t + z_u \end{cases}, \quad t为参数
+$$
+
+
 
 联立直线方程与平面方程，可解得投影点𝑉；对一个单元反射面板，设其三个顶点反射电磁波信号与投影面的交点为𝑉_{𝑖1}，𝑉_{𝑖2}，𝑉_{𝑖3}，则：
 
-$$S_{vi} = \frac{1}{2} \left| \overrightarrow{V_{i1} V_{i2}} \times \overrightarrow{V_{i1} V_{i3}} \right|$$
 
-$$S_{sum} = \sum_{i=1}^{n} S_{vi}$$
 
-$$w_i = \frac{S_{vi}}{S_{sum}}$$
+$$
+S_{vi} = \frac{1}{2} \left| \overrightarrow{V_{i1} V_{i2}} \times \overrightarrow{V_{i1} V_{i3}} \right|
+$$
+
+
+
+
+
+$$
+S_{sum} = \sum_{i=1}^{n} S_{vi}
+$$
+
+
+
+
+
+$$
+w_i = \frac{S_{vi}}{S_{sum}}
+$$
+
+
 
 馈源舱吸收比为：
 
-$$\eta = \sum_{i=1}^{n} w_i \eta_i = 67.46\%$$
+
+
+$$
+\eta = \sum_{i=1}^{n} w_i \eta_i = 67.46\%
+$$
+
+
 
 #### 5.3.3.2 基准反射球面接收比求解：
 
 根据：
 
-$$x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)$$
+
+
+$$
+x_E = \left( \frac{R}{2\cos\theta} - (1 - 0.466)R \right) \cdot \tan 2\theta, \quad (0° < \theta < 45°)
+$$
+
+
 
 设反射点到𝑍轴的距离为𝑟，有：
 
-$$r = R\sin\theta$$
+
+
+$$
+r = R\sin\theta
+$$
+
+
 
 作出𝑥_𝐸随𝜃变化和𝑥_𝐸随𝑟变化的曲线：
 
@@ -671,15 +1169,33 @@ $$r = R\sin\theta$$
 
 由 $-0.5 < x_E < 0.5$的限制条件，解得：
 
-$$0 < r < 7.3891 \quad \text{或} \quad 102.6396 < r < 108.0129$$
+
+
+$$
+0 < r < 7.3891 \quad \text{或} \quad 102.6396 < r < 108.0129
+$$
+
+
 
 则𝑆_𝑣为一个圆的面积加一个圆环的面积：
 
-$$\frac{S_v}{\pi} = (7.3891^2 + 108.0129^2 - 102.6398^2)$$
+
+
+$$
+\frac{S_v}{\pi} = (7.3891^2 + 108.0129^2 - 102.6398^2)
+$$
+
+
 
 求得基准反射球面的接收比为：
 
-$$\eta_{基准} = \frac{S_v}{\pi \times 150^2} \times 100\% = 5.27\%$$
+
+
+$$
+\eta_{基准} = \frac{S_v}{\pi \times 150^2} \times 100\% = 5.27\%
+$$
+
+
 
 ### 5.3.4 结果与误差分析：
 
