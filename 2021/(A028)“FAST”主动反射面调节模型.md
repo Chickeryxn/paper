@@ -8,9 +8,13 @@
 
 
 
+
+
 $$
 z = \frac{x^2}{4(F - l_2)} + \frac{y^2}{4(F - l_2)} - 300.4 + l_2 = 0.001780x^2 + 0.001780y^2 - 300.884
 $$
+
+
 
 
 
@@ -18,9 +22,13 @@ $$
 
 
 
+
+
 $$
 S'(x, y, z) = 0.16418x + 0.1228y + 0.97876z - 0.0017797(0.59895x - 0.80078y)^2 - 0.0017797(0.78377x + 0.58623y - 0.20503z)^2 + 300.88 = 0
 $$
+
+
 
 
 
@@ -107,6 +115,8 @@ $$
 
 
 
+
+
 $$
 \gamma_1 = arcsin\frac{|\overrightarrow{UL_iU_i} \times \overrightarrow{UL_iC}|}{|\overrightarrow{UL_iU_i}||\overrightarrow{UL_iC}|}
 $$
@@ -115,9 +125,15 @@ $$
 
 
 
+
+
+
+
 $$
 \gamma_2 = arcsin\frac{|\overrightarrow{UH_iU_i} \times \overrightarrow{UH_iC}|}{|\overrightarrow{UH_iU_i}||\overrightarrow{UH_iC}|}
 $$
+
+
 
 
 
@@ -139,9 +155,13 @@ $$
 
 
 
+
+
 $$
 z = \frac{x^2}{4(F - l)} + \frac{y^2}{4(F - l)} - 300.4 + l \quad (1)
 $$
+
+
 
 
 
@@ -157,9 +177,13 @@ $$
 
 
 
+
+
 $$
 l_{max} = max_{\phi}|l_\phi| \quad (2)
 $$
+
+
 
 
 
@@ -167,9 +191,13 @@ $$
 
 
 
+
+
 $$
 l_{sum} = \sum_{\phi}|l_\phi(2\pi R sin\phi)| \quad (3)
 $$
+
+
 
 
 
@@ -185,9 +213,13 @@ $$
 
 
 
+
+
 $$
 \begin{cases} \rho = \frac{p}{1 - \cos(\theta)} \\ p = F - l \quad (-0.6 < l < 0.6) \end{cases} \quad (4)
 $$
+
+
 
 
 
@@ -221,9 +253,13 @@ $$
 
 
 
+
+
 $$
 z = 0.001780x^{2} + 0.001780y^{2} - 300.884 \quad (11)
 $$
+
+
 
 
 
@@ -239,9 +275,13 @@ $$
 
 
 
+
+
 $$
 \begin{pmatrix} \overrightarrow{OA'} \end{pmatrix}^{T} = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \begin{pmatrix} \overrightarrow{OA} \end{pmatrix}^{T}
 $$
+
+
 
 
 
@@ -257,13 +297,19 @@ $$
 
 
 
+
+
 $$
 R_x = \begin{pmatrix} 1 & 0 & 0 \\ 0 & \cos\theta_x & -\sin\theta_x \\ 0 & \sin\theta_x & \cos\theta_x \end{pmatrix}
 $$
 
 
 
+
+
 它可以看作是向量的第一个分量（ $X$坐标）不发生改变，而后两个分量在对应的平面上进行二维旋转所得到的矩阵。同理，绕 $Y$轴在 $ZX$平面逆时针旋转 $\theta_y$的旋转矩阵为
+
+
 
 
 
@@ -273,7 +319,11 @@ $$
 
 
 
+
+
 绕 $Z$轴在 $XY$平面逆时针旋转 $\theta_z$的旋转矩阵为
+
+
 
 
 
@@ -283,7 +333,11 @@ $$
 
 
 
+
+
 再根据具体问题判断基本旋转的复合顺序，将基本旋转的旋转矩阵相乘即得到总的旋转矩阵。例如：依次绕 $X$、 $Y$、 $Z$轴旋转时，旋转矩阵 $R = R_x R_y R_z$，记原点为 $O$，空间内一点 $A$， $\overrightarrow{OA}$旋转所得的 $\overrightarrow{OA'}$满足：
+
+
 
 
 
@@ -293,9 +347,13 @@ $$
 
 
 
+
+
 5.2.1.2 图形变换：
 
 在三维空间中，记一图形方程为：
+
+
 
 
 
@@ -305,7 +363,11 @@ $$
 
 
 
+
+
 记一可逆坐标变换为：
+
+
 
 
 
@@ -315,7 +377,11 @@ $$
 
 
 
+
+
 记 $\phi^{-1}$为它的逆变换。对 $F$上的点 $(a, b, c)$可知以下式子成立：
+
+
 
 
 
@@ -325,13 +391,19 @@ $$
 
 
 
+
+
 故点 $\begin{pmatrix} a', b', c' \end{pmatrix}$在 $F \circ \phi^{-1}$ 所表示的图形上，且 $F \circ \phi^{-1}$所表示的图形上的点全为 $\begin{pmatrix} a', b', c' \end{pmatrix}$形式的点。即在 $\phi$这一可逆坐标变换下，新的图形方程为：
+
+
 
 
 
 $$
 F \circ \phi^{-1}(x, y, z) = 0 \quad (12)
 $$
+
+
 
 
 
@@ -343,13 +415,19 @@ $$
 
 
 
+
+
 $$
 S(x, y, z) = 0
 $$
 
 
 
+
+
 进行先绕Y轴逆时针旋转 $90° - \beta$角，再绕 $Z$轴逆时针旋转 $\alpha$角的旋转坐标变换 $\phi$为：
+
+
 
 
 
@@ -359,7 +437,11 @@ $$
 
 
 
+
+
 逆变换 $\phi^{-1}$为：
+
+
 
 
 
@@ -369,7 +451,11 @@ $$
 
 
 
+
+
 其中
+
+
 
 
 
@@ -379,13 +465,19 @@ $$
 
 
 
+
+
 则旋转后的抛物面 $S'$为：
+
+
 
 
 
 $$
 S'(x, y, z) = S \circ \phi^{-1}(x, y, z) = 0 \quad (13)
 $$
+
+
 
 
 
@@ -399,9 +491,13 @@ $$
 
 
 
+
+
 $$
 RMS = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left| \overrightarrow{CX_i'} - \overrightarrow{CX_i} \right|^{2}} \quad (14)
 $$
+
+
 
 
 
@@ -423,9 +519,13 @@ $$
 
 
 
+
+
 $$
 D = \frac{1}{2k} \left( \sum_{j=1}^{k} \left( \left| \overrightarrow{CX_j'} \right| - \left| \overrightarrow{CX_j} \right| \right) + k \left( \left| \overrightarrow{CP'} \right| - \left| \overrightarrow{CP} \right| \right) \right) \quad (15)
 $$
+
+
 
 
 
@@ -433,9 +533,13 @@ $$
 
 
 
+
+
 $$
 d = D
 $$
+
+
 
 
 
@@ -449,13 +553,19 @@ $$
 
 
 
+
+
 $$
 S(x, y, z) = 0.001780x^{2} + 0.001780y^{2} - z - 300.884 = 0
 $$
 
 
 
+
+
 则旋转后的抛物面S'为：
+
+
 
 
 
@@ -465,7 +575,11 @@ $$
 
 
 
+
+
 即：
+
+
 
 
 
@@ -475,13 +589,19 @@ $$
 
 
 
+
+
 由于问题 1 中理想抛物面顶点为 $(0,0, -300.884)$，经 $\phi$的旋转坐标变换后，得到问题 2中抛物面的顶点坐标为 $\begin{pmatrix} R_x^{-1} R_z^{-1} (0,0, -300.884)^{T} \end{pmatrix}^{T}$，为：
+
+
 
 
 
 $$
 (-49.3194, -36.8890, -294.0187)
 $$
+
+
 
 
 
@@ -493,13 +613,19 @@ $$
 
 
 
+
+
 $$
 \frac{x - x_0}{x_0} = \frac{y - y_0}{y_0} = \frac{z - z_0}{z_0} \quad (x_0, y_0, z_0 \neq 0) \quad (16)
 $$
 
 
 
+
+
 为完整表示 $x_0$、 $y_0$、 $z_0$为 0 的情况，可表示为参数方程：
+
+
 
 
 
@@ -509,9 +635,13 @@ $$
 
 
 
+
+
 已知抛物面方程 $F(x, y, z) = 0$代入即可求得连线与理想抛物面的焦点，即为主索节点移动到理想抛物面上时的坐标。
 
 求得主索节点在理想抛物面上的坐标后，可粗略求出各促动器伸缩量，从而验证模型一中设计的评价总伸缩量水平的指标 $l_{sum}$是合理的。设将主索节点移动到理想抛物线上时，促动器的总伸缩量（绝对值）为 $LSUM$：
+
+
 
 
 
@@ -523,9 +653,15 @@ $$
 
 
 
+
+
+
+
 $$
 LSUM_2 = \sum_{i=1}^{n_2} \left| \overrightarrow{X_{0i}X_{2i}} \right| \quad (19)
 $$
+
+
 
 
 
@@ -543,6 +679,8 @@ $X_{2i}$：第二类理想抛物面上的主索节点
 
 
 
+
+
 $$
 LSUM_1 = 141.0033
 $$
@@ -551,9 +689,15 @@ $$
 
 
 
+
+
+
+
 $$
 LSUM_2 = 114.8469
 $$
+
+
 
 
 
@@ -567,9 +711,13 @@ $LSUM_2 > LSUM_1$,因此说明模型 1 中的伸缩量水平的指标 $l_{sum}$�
 
 
 
+
+
 $$
 (x - x_c')^{2} + (y - y_c')^{2} + (z - z_c')^{2} = 0
 $$
+
+
 
 
 
@@ -577,9 +725,15 @@ $$
 
 
 
+
+
 $$
 (x_P - x_c')^{2} + (y_P - y_c')^{2} + (z_P - z_c')^{2} = 0
 $$
+
+
+
+
 
 
 
@@ -593,9 +747,15 @@ $$
 
 
 
+
+
+
+
 $$
 (x_T - x_c')^{2} + (y_T - y_c')^{2} + (z_T - z_c')^{2} = 0
 $$
+
+
 
 
 
@@ -609,9 +769,15 @@ $$
 
 
 
+
+
 $$
 M_{PQ} \begin{pmatrix} \frac{x_P + x_Q}{2}, \frac{y_P + y_Q}{2}, \frac{z_P + z_Q}{2} \end{pmatrix}
 $$
+
+
+
+
 
 
 
@@ -623,11 +789,15 @@ $$
 
 
 
+
+
 由此求得 $N_{PQ}$的坐标，同理可求得各圆弧中点坐标。
 
 3）求解 $RMS$和移动距离 $d$
 
 将各统计点坐标代入公式：
+
+
 
 
 
@@ -637,7 +807,11 @@ $$
 
 
 
+
+
 求得主索节点在理想抛物面上时，均方根误差为：
+
+
 
 
 
@@ -647,13 +821,19 @@ $$
 
 
 
+
+
 将各统计点坐标代入公式：
+
+
 
 
 
 $$
 d = D = \frac{1}{2k}\left[ \sum_{j=1}^{k}\left( \left| \overrightarrow{CX_{j}^{理想}} \right| - \left| \overrightarrow{CX_{j}^{实际}} \right| \right) + k\left( \left| \overrightarrow{CP_{理想}} \right| - \left| \overrightarrow{CP_{实际}} \right| \right) \right] \quad (21)
 $$
+
+
 
 
 
@@ -671,9 +851,13 @@ $$
 
 
 
+
+
 $$
 𝑅𝑀𝑆 = 0.0030\,m = 3.0\,mm
 $$
+
+
 
 
 
@@ -709,9 +893,13 @@ $$
 
 
 
+
+
 $$
 𝐶𝐹 = \frac{R}{2\cos\theta}
 $$
+
+
 
 
 
@@ -719,9 +907,13 @@ $$
 
 
 
+
+
 $$
 \lim_{\theta \to 0}\frac{R}{2\cos\theta} = \frac{R}{2}
 $$
+
+
 
 
 
@@ -741,9 +933,13 @@ $$
 
 
 
+
+
 $$
 J_{AB} = \left( \overrightarrow{AB} \times \overrightarrow{AP} \right) \cdot \left( \overrightarrow{AB} \times \overrightarrow{AC} \right)
 $$
+
+
 
 
 
@@ -751,9 +947,13 @@ $$
 
 
 
+
+
 $$
 J_{BC} = \left( \overrightarrow{BC} \times \overrightarrow{BP} \right) \cdot \left( \overrightarrow{BC} \times \overrightarrow{BA} \right), \quad J_{CA} = \left( \overrightarrow{CA} \times \overrightarrow{CP} \right) \cdot \left( \overrightarrow{CA} \times \overrightarrow{CB} \right)
 $$
+
+
 
 
 
@@ -783,9 +983,13 @@ $$
 
 
 
+
+
 $$
 \text{单元接收比} = \frac{\text{单个反射面反射信号被馈源舱接收的部分}}{\text{单个反射面的反射信号}}
 $$
+
+
 
 
 
@@ -793,9 +997,13 @@ $$
 
 
 
+
+
 $$
 \eta_i = \frac{S_{重叠}}{S_{投影}} \times 100\%
 $$
+
+
 
 
 
@@ -807,13 +1015,19 @@ $$
 
 
 
+
+
 $$
 \frac{\overrightarrow{CP}}{|CP|} = (0, 0, -1)
 $$
 
 
 
+
+
 当观测天体的方位角为𝛼，仰角为𝛽时，根据向量旋转，有：
+
+
 
 
 
@@ -823,7 +1037,11 @@ $$
 
 
 
+
+
 题目中给出焦径比 $\frac{F}{R}$为 0.466，有：
+
+
 
 
 
@@ -833,13 +1051,19 @@ $$
 
 
 
+
+
 可以得到𝑃点坐标，记为 $P(x_p, y_p, z_p)$。则馈源舱所在平面的方程为：
+
+
 
 
 
 $$
 x_p x + y_p y + z_p z = |CP|^2
 $$
+
+
 
 
 
@@ -859,13 +1083,19 @@ $$
 
 
 
+
+
 $$
 \text{单元接收比权重} = \frac{\text{单个反射面板反射信号量}}{\text{工作反射面反射信号总量}}
 $$
 
 
 
+
+
 也可称这个权重为单元面板反射信号比，其计算方式为：
+
+
 
 
 
@@ -877,9 +1107,15 @@ $$
 
 
 
+
+
+
+
 $$
 S_{sum} = \sum_{i=1}^{n} S_{vi}
 $$
+
+
 
 
 
@@ -891,9 +1127,13 @@ $$
 
 
 
+
+
 $$
 x_p x + y_p y + z_p z = 0
 $$
+
+
 
 
 
@@ -903,9 +1143,13 @@ $$
 
 
 
+
+
 $$
 \eta = \sum_{i=1}^{n} w_i \eta_i
 $$
+
+
 
 
 
@@ -923,9 +1167,15 @@ $$
 
 
 
+
+
 $$
 M(-R\sin\theta, -R\cos\theta)
 $$
+
+
+
+
 
 
 
@@ -939,13 +1189,21 @@ $$
 
 
 
+
+
+
+
 $$
 E(x_E, -(1 - 0.466)R)
 $$
 
 
 
+
+
 可得直线𝑀𝐹的方程：
+
+
 
 
 
@@ -955,7 +1213,11 @@ $$
 
 
 
+
+
 求𝐸点横坐标：
+
+
 
 
 
@@ -965,7 +1227,11 @@ $$
 
 
 
+
+
 得：
+
+
 
 
 
@@ -975,7 +1241,11 @@ $$
 
 
 
+
+
 基准反射球面上的点反射的信号能被馈源舱接收的充要条件为：
+
+
 
 
 
@@ -985,13 +1255,19 @@ $$
 
 
 
+
+
 可以求出满足该条件的𝜃的范围，从而求解出反射信号能被馈源舱接收的点的范围。设基准反射球面接收比为𝜂_基准，则：
+
+
 
 
 
 $$
 \eta_{基准} = \frac{S_v}{\pi \times 150^2}
 $$
+
+
 
 
 
@@ -1013,9 +1289,15 @@ $$
 
 
 
+
+
 $$
 \cos\theta = \left< \overrightarrow{CP} \cdot \overrightarrow{C'U} \right> = \frac{\left| \overrightarrow{CP} \cdot \overrightarrow{C'U} \right|}{|CP||C'U|}
 $$
+
+
+
+
 
 
 
@@ -1029,13 +1311,21 @@ $$
 
 
 
+
+
+
+
 $$
 \overrightarrow{UF} = \overrightarrow{C'U} - \overrightarrow{C'F} = (l, m, n)
 $$
 
 
 
+
+
 则直线𝑈𝐹的参数方程为：
+
+
 
 
 
@@ -1045,7 +1335,11 @@ $$
 
 
 
+
+
 馈源舱所在平面的方程为：
+
+
 
 
 
@@ -1055,15 +1349,21 @@ $$
 
 
 
+
+
 联立直线方程和平面方程，求解即可得到 U 点反射的电磁波信号与馈源舱所在平面的交点𝑊。
 
 对一个单元反射面板，设其三个顶点反射电磁波信号与馈源舱所在平面的交点为𝑊₁，𝑊₂，𝑊₃，则：
 
 
 
+
+
 $$
 S_{投影} = \frac{1}{2} \left| \overrightarrow{W_1 W_2} \times \overrightarrow{W_1 W_3} \right|
 $$
+
+
 
 
 
@@ -1087,13 +1387,19 @@ $$
 
 
 
+
+
 $$
 x_p x + y_p y + z_p z = |CP|^2
 $$
 
 
 
+
+
 过反射面板一点𝑈且与投影面垂直的直线方程：
+
+
 
 
 
@@ -1103,13 +1409,21 @@ $$
 
 
 
+
+
 联立直线方程与平面方程，可解得投影点𝑉；对一个单元反射面板，设其三个顶点反射电磁波信号与投影面的交点为𝑉_{𝑖1}，𝑉_{𝑖2}，𝑉_{𝑖3}，则：
+
+
 
 
 
 $$
 S_{vi} = \frac{1}{2} \left| \overrightarrow{V_{i1} V_{i2}} \times \overrightarrow{V_{i1} V_{i3}} \right|
 $$
+
+
+
+
 
 
 
@@ -1123,13 +1437,21 @@ $$
 
 
 
+
+
+
+
 $$
 w_i = \frac{S_{vi}}{S_{sum}}
 $$
 
 
 
+
+
 馈源舱吸收比为：
+
+
 
 
 
@@ -1139,9 +1461,13 @@ $$
 
 
 
+
+
 #### 5.3.3.2 基准反射球面接收比求解：
 
 根据：
+
+
 
 
 
@@ -1151,13 +1477,19 @@ $$
 
 
 
+
+
 设反射点到𝑍轴的距离为𝑟，有：
+
+
 
 
 
 $$
 r = R\sin\theta
 $$
+
+
 
 
 
@@ -1171,13 +1503,19 @@ $$
 
 
 
+
+
 $$
 0 < r < 7.3891 \quad \text{或} \quad 102.6396 < r < 108.0129
 $$
 
 
 
+
+
 则𝑆_𝑣为一个圆的面积加一个圆环的面积：
+
+
 
 
 
@@ -1187,13 +1525,19 @@ $$
 
 
 
+
+
 求得基准反射球面的接收比为：
+
+
 
 
 
 $$
 \eta_{基准} = \frac{S_v}{\pi \times 150^2} \times 100\% = 5.27\%
 $$
+
+
 
 
 

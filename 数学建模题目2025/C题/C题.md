@@ -43,9 +43,13 @@ Z 值（Z-score）的计算公式：
 
 
 
+
+
 $$
 Z = \frac{X - \mu}{\sigma}
 $$
+
+
 
 
 

@@ -69,13 +69,19 @@
 
 
 
+
+
 $$
 \sin\alpha_s = \cos\delta\cos\varphi\cos\omega + \sin\delta\sin\varphi
 $$
 
 
 
+
+
 太阳方位角 $\gamma_s$[4]
+
+
 
 
 
@@ -85,7 +91,11 @@ $$
 
 
 
+
+
 其中 $\varphi$为当地纬度，北纬为正； $\omega$为太阳时角
+
+
 
 
 
@@ -95,13 +105,19 @@ $$
 
 
 
+
+
 其中 $ST$为当地时间， $\delta$为太阳赤纬角[5]
+
+
 
 
 
 $$
 \sin\delta = \sin\frac{2\pi D}{365}\sin\left(\frac{2\pi}{360} \times 23.45\right)
 $$
+
+
 
 
 
@@ -113,9 +129,15 @@ $$
 
 
 
+
+
 $$
 DNI = G_0\left[a + b\exp\left(-\frac{c}{\sin\alpha_s}\right)\right]
 $$
+
+
+
+
 
 
 
@@ -129,9 +151,17 @@ $$
 
 
 
+
+
+
+
 $$
 b = 0.5055 + 0.00595(6.5 - H)^2
 $$
+
+
+
+
 
 
 
@@ -143,9 +173,13 @@ $$
 
 
 
+
+
 其中 $G_0$为太阳常数，其值取为1.366 kW/m²， $H$为海拔高度（单位：km）。
 
 ### 3. 定日镜场的输出热功率 $E_{field}$为
+
+
 
 
 
@@ -155,15 +189,21 @@ $$
 
 
 
+
+
 其中DNI为法向直接辐射辐照度； $N$为定日镜总数（单位：面）； $A_i$为第 $i$面定日镜采光面积（单位：m²）； $\eta_i$为第 $i$面镜子的光学效率。
 
 ### 4. 定日镜的光学效率 $\eta$为
 
 
 
+
+
 $$
 \eta = \eta_{sb}\eta_{cos}\eta_{at}\eta_{trunc}\eta_{ref}
 $$
+
+
 
 
 
